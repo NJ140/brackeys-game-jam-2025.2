@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://lg7gdum5r6cy"]
+
+[ext_resource type="Texture2D" uid="uid://b3x26xdclpomc" path="res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png" id="1_isytv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okia5"]
+atlas = ExtResource("1_isytv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e70sp"]
+atlas = ExtResource("1_isytv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnpw3"]
+atlas = ExtResource("1_isytv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt5j0"]
+atlas = ExtResource("1_isytv")
+region = Rect2(72, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okia5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e70sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnpw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt5j0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]

@@ -1,0 +1,225 @@
+[gd_scene load_steps=20 format=3 uid="uid://c81rq7qh015ql"]
+
+[ext_resource type="Script" uid="uid://8a5ehg638c4k" path="res://Tower/tower.gd" id="1_6pm6r"]
+[ext_resource type="Script" uid="uid://dumwnlgv7py7l" path="res://character_model.gd" id="2_okia5"]
+[ext_resource type="SpriteFrames" uid="uid://lg7gdum5r6cy" path="res://Tower/tower_sprite_frame.tres" id="3_okia5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pm6r"]
+radius = 20.0
+height = 60.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okia5"]
+bg_color = Color(0.877891, 0.443416, 0.535123, 0.588235)
+corner_radius_top_left = 200000
+corner_radius_top_right = 200000
+corner_radius_bottom_right = 200000
+corner_radius_bottom_left = 200000
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okia5"]
+radius = 200.0
+
+[sub_resource type="Animation" id="Animation_e70sp"]
+resource_name = "Damaged"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.984935, 0.195257, 0.270637, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_okia5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:a_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6pm6r"]
+resource_name = "Shoot"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:a_rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.174533, -0.349066, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e70sp"]
+_data = {
+&"Damaged": SubResource("Animation_e70sp"),
+&"RESET": SubResource("Animation_okia5"),
+&"Shoot": SubResource("Animation_6pm6r")
+}
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_okia5"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e70sp"]
+animation = &"Shoot"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jnpw3"]
+animation = &"Damaged"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rt5j0"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fe3rl"]
+animation = &"Shoot"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_xk0yk"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_nrwet"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_okia5"]
+graph_offset = Vector2(-423.405, -24.7686)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_okia5")
+nodes/Add2/position = Vector2(300, 180)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_fe3rl")
+nodes/Animation/position = Vector2(-40, 0)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_e70sp")
+"nodes/Animation 2/position" = Vector2(-40, 560)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_jnpw3")
+"nodes/Animation 3/position" = Vector2(-40, 180)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_rt5j0")
+"nodes/Animation 4/position" = Vector2(-40, 380)
+nodes/Attack/node = SubResource("AnimationNodeOneShot_xk0yk")
+nodes/Attack/position = Vector2(140, 400)
+nodes/Damaged/node = SubResource("AnimationNodeOneShot_nrwet")
+nodes/Damaged/position = Vector2(120, 40)
+nodes/output/position = Vector2(500, 180)
+node_connections = [&"Add2", 0, &"Damaged", &"Add2", 1, &"Attack", &"Attack", 0, &"Animation 4", &"Attack", 1, &"Animation 2", &"Damaged", 0, &"Animation", &"Damaged", 1, &"Animation 3", &"output", 0, &"Add2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e70sp"]
+radius = 31.0483
+
+[node name="Tower" type="CharacterBody2D"]
+script = ExtResource("1_6pm6r")
+
+[node name="Pickable" type="Area2D" parent="."]
+z_index = 1
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickable"]
+z_index = 1
+position = Vector2(0, -23)
+shape = SubResource("CapsuleShape2D_6pm6r")
+
+[node name="AttackRange" type="Area2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+collision_layer = 32
+collision_mask = 2
+
+[node name="RangeVisual" type="Panel" parent="AttackRange"]
+unique_name_in_owner = true
+visible = false
+y_sort_enabled = true
+custom_minimum_size = Vector2(2.085, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 1)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_okia5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+z_index = 1
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_okia5")
+debug_color = Color(0.70228, 0.701909, 0.67621, 0.42)
+
+[node name="Model" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_okia5")
+a_rotation = 0.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Model"]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -30)
+scale = Vector2(2.5, 2.5)
+sprite_frames = ExtResource("3_okia5")
+frame_progress = 0.119241
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_e70sp")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Model"]
+unique_name_in_owner = true
+root_node = NodePath("%Model/..")
+tree_root = SubResource("AnimationNodeBlendTree_okia5")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Add2/add_amount = 1.0
+parameters/Attack/active = false
+parameters/Attack/internal_active = false
+parameters/Attack/request = 0
+parameters/Damaged/active = false
+parameters/Damaged/internal_active = false
+parameters/Damaged/request = 0
+
+[node name="Projectile_spawn" type="Node2D" parent="."]
+unique_name_in_owner = true
+y_sort_enabled = true
+position = Vector2(0, -16)
+
+[node name="Foot" type="CollisionShape2D" parent="."]
+z_index = 1
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_e70sp")
+debug_color = Color(0.600308, 0.535357, 0.266584, 0.42)
+
+[node name="AttackTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+autostart = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="input_event" from="Pickable" to="." method="_on_pickable_input_event"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_range_body_entered"]
+[connection signal="body_shape_exited" from="AttackRange" to="." method="_on_range_body_shape_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_try_attack"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bit46wcfhs5b"]
+
+[ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_a85iw"]
+[ext_resource type="Script" uid="uid://cul32voaj2ty0" path="res://projectile.gd" id="2_qxf0c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxf0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a85iw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxf0c"]
+radius = 8.0
+
+[node name="Projectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("2_qxf0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(0.09375, 0.09375)
+sprite_frames = SubResource("SpriteFrames_qxf0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxf0c")
+
+[node name="Despawn" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]

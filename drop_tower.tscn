@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbiavvx17xjcl"]
+
+[ext_resource type="Script" uid="uid://boaqp6fwoljlh" path="res://drop_tower.gd" id="1_jvq1f"]
+[ext_resource type="Texture2D" uid="uid://b3x26xdclpomc" path="res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png" id="1_vkvte"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4wve"]
+atlas = ExtResource("1_vkvte")
+region = Rect2(0, 0, 24, 20)
+
+[node name="DropTower" type="TextureRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(72, 60)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_y4wve")
+stretch_mode = 5
+script = ExtResource("1_jvq1f")

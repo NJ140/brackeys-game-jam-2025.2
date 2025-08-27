@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtpji6lbouhvd"]
+
+[ext_resource type="Script" uid="uid://bnlhdigrboeh" path="res://tower_flow_container.gd" id="1_oxc1j"]
+[ext_resource type="PackedScene" uid="uid://dbiavvx17xjcl" path="res://drop_tower.tscn" id="2_5nkvm"]
+
+[node name="TowerFlowContainer" type="FlowContainer"]
+offset_right = 300.0
+offset_bottom = 136.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 2
+vertical = true
+script = ExtResource("1_oxc1j")
+
+[node name="DropTower" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower2" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower3" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower4" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower5" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower6" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower7" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2
+
+[node name="DropTower8" parent="." instance=ExtResource("2_5nkvm")]
+layout_mode = 2

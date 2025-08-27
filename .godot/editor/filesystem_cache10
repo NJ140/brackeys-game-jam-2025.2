@@ -1,0 +1,55 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1756265526
+biscut_economy.gd::GDScript/GDScript::6078129676528004594::1756240261::0::1::::<>Node<><>0<>0<><>::
+biscut_economy.tscn::PackedScene::7036367558288277873::1756265535::0::1::::<><><>0<>0<><>::uid://csuj54mcnxvkc::::res://biscut_economy.gd
+character_model.gd::GDScript/GDScript::8589171034073497155::1756262467::0::1::::CharacterModel<>Node2D<><>0<>0<><>::
+default_bus_layout.tres::AudioBusLayout/AudioBusLayout::8354407067646468702::1756238760::0::1::::<><><>0<>0<><>::
+drop_tower.tscn::PackedScene/PackedScene::7246004558167669419::1756263392::0::1::::<><><>0<>0<><>::
+event_bus.gd::GDScript/GDScript::4134303796868032976::1756237990::0::1::::<>Node<><>0<>0<><>::
+event_bus.tscn::PackedScene/PackedScene::7368475317291892281::1756263392::0::1::::<><><>0<>0<><>::uid://by5xm5ycj4wq7::::res://event_bus.gd
+icon.svg::CompressedTexture2D/CompressedTexture2D::7917772178880401331::1756074188::1756074194::1::::<><><>0<>0<>68877fb124994c712c9c4ac2cdd357e4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+main.tscn::PackedScene/PackedScene::4762639568723241004::1756263391::0::1::::<><><>0<>0<><>::
+player.gd::GDScript/GDScript::2972977430596857658::1756239300::0::1::::<>Node<><>0<>0<><>::
+player.tscn::PackedScene/PackedScene::4993808781426368312::1756263392::0::1::::<><><>0<>0<><>::uid://bimeresio7bcs::::res://player.gd
+projectile.gd::GDScript/GDScript::6201075812305126397::1756238710::0::1::::Projectile<>Area2D<><>0<>0<><>::
+projectile.tscn::PackedScene/PackedScene::87910938863716493::1756263392::0::1::::<><><>0<>0<><>::uid://dk2osy66kx6b4::::res://icon.svg<>uid://cul32voaj2ty0::::res://projectile.gd
+test_attack.tscn::PackedScene/PackedScene::8459161424893298934::1756263392::0::1::::<><><>0<>0<><>::uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://bf1c21jlowx3s::::res://Enemy/enemy.tscn
+::res://Assets/::1756241101
+::res://Assets/3rd party/::1756241159
+::res://Assets/3rd party/bdragon1727_particals/::1756241382
+Free Smoke Fx  Pixel 04.png::CompressedTexture2D::5102997640270430001::1756241189::1756265526::1::::<><><>0<>0<>8435c49cd91cf8e677998f7fd513a0ac<>res://.godot/imported/Free Smoke Fx  Pixel 04.png-e2912f7194509f6bde4e17c4857407bb.ctex::
+Free Smoke Fx  Pixel 05.png::CompressedTexture2D::6621351600002508438::1756241189::1756265526::1::::<><><>0<>0<>7bb145e3e10ab477fbf9a98f085dfee7<>res://.godot/imported/Free Smoke Fx  Pixel 05.png-7a78b1b3b48a571b5b6bf0c20fd7efe4.ctex::
+Free Smoke Fx  Pixel 06.png::CompressedTexture2D::3519165257689806984::1756241189::1756265526::1::::<><><>0<>0<>cd7b407e107cf9ecff81d0e0389f1a82<>res://.godot/imported/Free Smoke Fx  Pixel 06.png-5e6b76a259b407dca275100688a0d8e3.ctex::
+Free Smoke Fx  Pixel 07.png::CompressedTexture2D::5811220207097732503::1756241189::1756265526::1::::<><><>0<>0<>b685740732b28d60c290da5dd72825a3<>res://.godot/imported/Free Smoke Fx  Pixel 07.png-bc7497ada01f45c62909a3a1bac43ddc.ctex::
+license.txt::TextFile::-1::1756241382::0::1::::<><><>0<>0<><>::
+::res://Assets/3rd party/kenney_assets/::1756139647
+License.txt::TextFile::-1::1756074779::0::1::::<><><>0<>0<><>::
+::res://Assets/3rd party/kenney_assets/characters/::1756241110
+base_enemy_idle.png::CompressedTexture2D::3075991964519140459::1756139709::1756265526::1::::<><><>0<>0<>61d559398f69af25d1ae9073b945f144<>res://.godot/imported/base_enemy_idle.png-102d8c236f61dd74804c9c68ab4ddd25.ctex::
+base_enemy_walk.png::CompressedTexture2D::7089125863758454789::1756084849::1756265526::1::::<><><>0<>0<>6e617f551939786fd3902720c8616876<>res://.godot/imported/base_enemy_walk.png-11947cec9755c1ba2db2ba492782abe9.ctex::
+base_tower_idle.png::CompressedTexture2D::4775811484579998906::1756140470::1756265526::1::::<><><>0<>0<>8d0276cf5530c28c00dff642659a3a39<>res://.godot/imported/base_tower_idle.png-9e13cd986fb3a00e707f9c4aed956d9d.ctex::
+base_tower_idle_dark.png::CompressedTexture2D::4400884925094772218::1756140611::1756265526::1::::<><><>0<>0<>ab73151341f9f049ad5aeebac205362a<>res://.godot/imported/base_tower_idle_dark.png-ec94a6f8bef32b23bafa1dab2d1389df.ctex::
+::res://Assets/3rd party/kenney_assets/tiles/::1756241112
+basic_tiles.png::CompressedTexture2D::2738091939703850377::1756074779::1756265528::1::::<><><>0<>0<>d64ffc8cffdc1c6512fa2d275aa31c54<>res://.godot/imported/basic_tiles.png-cdb0d0fccd2ba40d940cdbadc950b6b7.ctex::
+Building Tiles.png::CompressedTexture2D::4381160946928172673::1756074779::1756265527::1::::<><><>0<>0<>d3a1848098efe92d0d6deb64d9f709f8<>res://.godot/imported/Building Tiles.png-1c0c9bc85aaa47ed7f983ad2b79213a0.ctex::
+Decor.png::CompressedTexture2D::6847078574401313493::1756074779::1756265528::1::::<><><>0<>0<>60b33b8badfa5d78724efaf5c2d4b209<>res://.godot/imported/Decor.png-abc4ff31f127c322c20edf05e4c13dd6.ctex::
+walls.png::CompressedTexture2D::1822051361884719009::1756074779::1756265528::1::::<><><>0<>0<>9f6eabb78320c8881bc49804829ae40c<>res://.godot/imported/walls.png-d6c63466ad06b22051c3e58cf44bb1b9.ctex::
+water_tiles.png::CompressedTexture2D::6508451845698821237::1756074779::1756265527::1::::<><><>0<>0<>a469996de8c80410a5d26eb5fe745e30<>res://.godot/imported/water_tiles.png-51b58a0890f58b138abcffbe1cae8dca.ctex::
+::res://Economy/::1756265514
+::res://Enemy/::1756265526
+enemy.gd::GDScript/GDScript::2217614971851444183::1756259645::0::1::::EnemyUnit<>PathFollow2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2791209753939516374::1756265526::0::1::::<><><>0<>0<><>::uid://6uh2asruvlxv::::res://Enemy/enemy.gd<>uid://da7krty4wyu42::::res://Enemy/Enemy_body.gd<>uid://c8aa4qscrg6aj::::res://Assets/3rd party/kenney_assets/characters/base_enemy_walk.png<>uid://dumwnlgv7py7l::::res://character_model.gd<>uid://co187hvt4w7st::::res://Assets/3rd party/bdragon1727_particals/Free Smoke Fx  Pixel 07.png
+Enemy_body.gd::GDScript/GDScript::7225960704000216709::1756156343::0::1::::<>CharacterBody2D<><>0<>0<><>::
+::res://Levels/::1756265526
+enemy_path_2d.gd::GDScript/GDScript::226302336520862066::1756148372::0::1::::EnemyPath<>Path2D<><>0<>0<><>::
+enemy_path_manager.gd::GDScript/GDScript::1617635019768460409::1756148887::0::1::::<>Node2D<><>0<>0<><>::
+level.tscn::PackedScene::1423242174788487966::1756265526::0::1::::<><><>0<>0<><>::uid://bfal8eghpy2ef::::res://Assets/3rd party/kenney_assets/tiles/basic_tiles.png<>uid://b3ojc0j3xr10p::::res://Assets/3rd party/kenney_assets/tiles/Building Tiles.png<>uid://c4s1nbu5r5fwv::::res://Assets/3rd party/kenney_assets/tiles/Decor.png<>uid://07u6jg45xofh::::res://Assets/3rd party/kenney_assets/tiles/walls.png<>uid://cyy0isfm61hkf::::res://Assets/3rd party/kenney_assets/tiles/water_tiles.png<>uid://dhvfwm7eck47::::res://Levels/enemy_path_2d.gd<>uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://xbuhhtucwj7f::::res://Levels/enemy_path_manager.gd
+::res://Rounds/::1756265488
+wave_spawner.gd::GDScript/GDScript::3716645284001100174::1756238181::0::1::::<>Node<><>0<>0<><>::
+wave_spawner.tscn::PackedScene/PackedScene::8685948505738997629::1756265488::0::1::::<><><>0<>0<><>::uid://bs7mutf2f24gg::::res://Rounds/wave_spawner.gd
+::res://Tower/::1756265526
+tower.gd::GDScript/GDScript::2318060871393175572::1756265418::0::1::::Tower<>CharacterBody2D<><>0<>0<><>::
+tower.tscn::PackedScene::7143809496442921955::1756265526::0::1::::<><><>0<>0<><>::uid://8a5ehg638c4k::::res://Tower/tower.gd<>uid://b3x26xdclpomc::::res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png<>uid://dumwnlgv7py7l::::res://character_model.gd
+::res://UI/::1756265502
+tower_container.gd::GDScript/GDScript::1367488590993617817::1756265409::0::1::::<>GridContainer<><>0<>0<><>::
+tower_container.tscn::PackedScene/PackedScene::7492843745940162487::1756265502::0::1::::<><><>0<>0<><>::uid://tqolp6jtv778::::res://UI/tower_container.gd

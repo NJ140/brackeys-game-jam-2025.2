@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdfbkh8rhfei7"]
+
+[ext_resource type="Script" uid="uid://bimeresio7bcs" path="res://player.gd" id="1_4flbx"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_4flbx")
+biscuts = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0,
+3: 0
+})
