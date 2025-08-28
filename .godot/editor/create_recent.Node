@@ -1,3 +1,5 @@
+Label
+WorldEnvironment
 Panel
 CanvasLayer
 ColorRect
@@ -11,4 +13,3 @@ GPUParticles2D
 CPUParticles2D
 Node
 AnimationPlayer
-NavigationAgent2D

@@ -4,9 +4,3 @@
 
 [node name="Player" type="Node"]
 script = ExtResource("1_4flbx")
-biscuts = Dictionary[int, int]({
-0: 0,
-1: 0,
-2: 0,
-3: 0
-})
