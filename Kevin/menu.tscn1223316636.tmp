@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1vu0kt0x70b8"]
+
+[ext_resource type="Script" path="res://Kevin/SlashPanel.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://c5iayf7jmwr2b" path="res://Kevin/Menu.gd" id="1_ouk20"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ouk20")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 1256.0
+offset_bottom = 696.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0392157, 0.0392157, 0.0392157, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 1256.0
+offset_bottom = 39.0
+text = "Menu"
+
+[node name="LeftRail" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 1
+offset_left = 24.0
+offset_top = 120.0
+offset_right = 344.0
+offset_bottom = 792.0
+theme_override_constants/separation = 12
+
+[node name="BtnItems" type="Button" parent="LeftRail"]
+layout_mode = 2
+text = "Items"
+
+[node name="btnSkills" type="Button" parent="LeftRail"]
+layout_mode = 2
+text = "Skills"
+
+[node name="btnSystem" type="Button" parent="LeftRail"]
+layout_mode = 2
+text = "System"
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Content"]
+layout_mode = 1
+offset_right = 47.0
+offset_bottom = 23.0
+text = "ITEMS"
+
+[node name="PageHost" type="Control" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FX" type="AnimationPlayer" parent="."]
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Selector" type="Control" parent="Overlay"]
+z_index = -5
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("1_lti8b")

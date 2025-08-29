@@ -1,8 +1,10 @@
-Button
+HBoxContainer
 PanelContainer
 MarginContainer
-Panel
+Container
 VBoxContainer
+Button
+Panel
 WorldEnvironment
 Label
 CanvasLayer
@@ -10,6 +12,3 @@ ColorRect
 Node2D
 FlowContainer
 GridContainer
-AnimationTree
-Path2D
-AnimatedSprite2D

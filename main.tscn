@@ -1,7 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://b84b8iocicfyy"]
+[gd_scene load_steps=8 format=3 uid="uid://b84b8iocicfyy"]
 
 [ext_resource type="PackedScene" uid="uid://ujouc3dufrxe" path="res://Levels/level.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bhw5vbkjf8txr" path="res://Kevin/Hud.tscn" id="2_0xm2m"]
+
+[sub_resource type="Curve" id="Curve_h2yge"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_1bvp3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_lquwl"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.530387, 0.348315), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_eabcg"]
+curve_x = SubResource("Curve_h2yge")
+curve_y = SubResource("Curve_1bvp3")
+curve_z = SubResource("Curve_lquwl")
+
+[sub_resource type="Environment" id="Environment_7mycd"]
+background_mode = 3
+glow_intensity = 0.3
+glow_bloom = 0.26
+glow_hdr_threshold = 0.5
+adjustment_brightness = 0.9
+adjustment_contrast = 0.9
+adjustment_saturation = 1.15
+adjustment_color_correction = SubResource("CurveXYZTexture_eabcg")
 
 [node name="Main" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(-28, 55)
+scale = Vector2(0.7, 0.7)
+
+[node name="Hud" parent="." instance=ExtResource("2_0xm2m")]
+z_index = 5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7mycd")

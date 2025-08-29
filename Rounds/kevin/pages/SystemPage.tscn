@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpy5lmwsdhtb0"]
+
+[ext_resource type="Script" uid="uid://c6o2c7388djni" path="res://pages/SystemPage.gd" id="1_gisef"]
+
+[node name="SystemPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gisef")
+
+[node name="List" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="BtnSave" type="Button" parent="List"]
+layout_mode = 2
+text = "Save"
+
+[node name="BtnLoad" type="Button" parent="List"]
+layout_mode = 2
+text = "Load"
+
+[node name="RowAudio" type="HBoxContainer" parent="List"]
+layout_mode = 2
+
+[node name="LblAudio" type="Label" parent="List/RowAudio"]
+layout_mode = 2
+text = "SOUND"
+
+[node name="Vol" type="HSlider" parent="List/RowAudio"]
+layout_mode = 2
+step = 5.0
+
+[node name="RowRes" type="HBoxContainer" parent="List"]
+layout_mode = 2
+
+[node name="LblRes" type="Label" parent="List/RowRes"]
+layout_mode = 2
+text = "RESOLUTION"
+
+[node name="Res" type="OptionButton" parent="List/RowRes"]
+layout_mode = 2
+
+[node name="RowFull" type="HBoxContainer" parent="List"]
+layout_mode = 2
+
+[node name="LblFull" type="Label" parent="List/RowFull"]
+layout_mode = 2
+text = "FULLSCREEN"
+
+[node name="Full" type="CheckBox" parent="List/RowFull"]
+layout_mode = 2
+
+[node name="BtnQuit" type="Button" parent="List"]
+layout_mode = 2
+text = "Quit"
