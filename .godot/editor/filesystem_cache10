@@ -1,20 +1,20 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756362151
-character_model.gd::GDScript::8589171034073497155::1756262467::0::1::::CharacterModel<>Node2D<><>0<>0<><>::
+::res://::1756449009
+character_model.gd::GDScript/GDScript::8589171034073497155::1756262467::0::1::::CharacterModel<>Node2D<><>0<>0<><>::
 default_bus_layout.tres::AudioBusLayout/AudioBusLayout::8354407067646468702::1756238760::0::1::::<><><>0<>0<><>::
-drop_tower.gd::GDScript::3370064390384999001::1756276633::0::1::::<>TextureRect<><>0<>0<><>::
-drop_tower.tscn::PackedScene::7246004558167669419::1756276674::0::1::::<><><>0<>0<><>::uid://boaqp6fwoljlh::::res://drop_tower.gd<>uid://b3x26xdclpomc::::res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png
-event_bus.gd::GDScript::4134303796868032976::1756276087::0::1::::<>Node<><>0<>0<><>::
-event_bus.tscn::PackedScene::7368475317291892281::1756276674::0::1::::<><><>0<>0<><>::uid://by5xm5ycj4wq7::::res://event_bus.gd
+drop_tower.gd::GDScript::3370064390384999001::1756439967::0::1::::<>TextureRect<><>0<>0<><>::
+drop_tower.tscn::PackedScene::7246004558167669419::1756448233::0::1::::<><><>0<>0<><>::uid://boaqp6fwoljlh::::res://drop_tower.gd<>uid://b3x26xdclpomc::::res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png
+event_bus.gd::GDScript::4134303796868032976::1756449009::0::1::::<>Node<><>0<>0<><>::
+event_bus.tscn::PackedScene::7368475317291892281::1756448234::0::1::::<><><>0<>0<><>::uid://by5xm5ycj4wq7::::res://event_bus.gd
 icon.svg::CompressedTexture2D/CompressedTexture2D::7917772178880401331::1756074188::1756074194::1::::<><><>0<>0<>68877fb124994c712c9c4ac2cdd357e4<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-main.tscn::PackedScene::4762639568723241004::1756276674::0::1::::<><><>0<>0<><>::
-player.gd::GDScript/GDScript::2972977430596857658::1756239300::0::1::::<>Node<><>0<>0<><>::
-player.tscn::PackedScene::4993808781426368312::1756263392::0::1::::<><><>0<>0<><>::uid://bimeresio7bcs::::res://player.gd
+main.tscn::PackedScene::4762639568723241004::1756448233::0::1::::<><><>0<>0<><>::uid://ujouc3dufrxe::::res://Levels/level.tscn
+player.gd::GDScript::2972977430596857658::1756448380::0::1::::<>Node<><>0<>0<><>::
+player.tscn::PackedScene::4993808781426368312::1756448963::0::1::::<><><>0<>0<><>::uid://bimeresio7bcs::::res://player.gd
 projectile.gd::GDScript/GDScript::6201075812305126397::1756238710::0::1::::Projectile<>Area2D<><>0<>0<><>::
-projectile.tscn::PackedScene::87910938863716493::1756276674::0::1::::<><><>0<>0<><>::uid://dk2osy66kx6b4::::res://icon.svg<>uid://cul32voaj2ty0::::res://projectile.gd
-test_attack.tscn::PackedScene::8459161424893298934::1756263392::0::1::::<><><>0<>0<><>::uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://bf1c21jlowx3s::::res://Enemy/enemy.tscn
-tower_flow_container.gd::GDScript::97706312142446495::1756267564::0::1::::<>FlowContainer<><>0<>0<><>::
-tower_flow_container.tscn::PackedScene::8524378131080594505::1756276674::0::1::::<><><>0<>0<><>::uid://bnlhdigrboeh::::res://tower_flow_container.gd<>uid://dbiavvx17xjcl::::res://drop_tower.tscn
+projectile.tscn::PackedScene::87910938863716493::1756448233::0::1::::<><><>0<>0<><>::uid://dk2osy66kx6b4::::res://icon.svg<>uid://cul32voaj2ty0::::res://projectile.gd
+test_attack.tscn::PackedScene/PackedScene::8459161424893298934::1756263392::0::1::::<><><>0<>0<><>::uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://bf1c21jlowx3s::::res://Enemy/enemy.tscn
+tower_flow_container.gd::GDScript/GDScript::97706312142446495::1756267564::0::1::::<>FlowContainer<><>0<>0<><>::
+tower_flow_container.tscn::PackedScene::8524378131080594505::1756448234::0::1::::<><><>0<>0<><>::uid://bnlhdigrboeh::::res://tower_flow_container.gd<>uid://dbiavvx17xjcl::::res://drop_tower.tscn
 ::res://Assets/::1756241101
 ::res://Assets/3rd party/::1756241159
 ::res://Assets/3rd party/bdragon1727_particals/::1756265526
@@ -36,24 +36,26 @@ Building Tiles.png::CompressedTexture2D/CompressedTexture2D::4381160946928172673
 Decor.png::CompressedTexture2D/CompressedTexture2D::6847078574401313493::1756074779::1756265528::1::::<><><>0<>0<>60b33b8badfa5d78724efaf5c2d4b209<>res://.godot/imported/Decor.png-abc4ff31f127c322c20edf05e4c13dd6.ctex::
 walls.png::CompressedTexture2D/CompressedTexture2D::1822051361884719009::1756074779::1756265528::1::::<><><>0<>0<>9f6eabb78320c8881bc49804829ae40c<>res://.godot/imported/walls.png-d6c63466ad06b22051c3e58cf44bb1b9.ctex::
 water_tiles.png::CompressedTexture2D/CompressedTexture2D::6508451845698821237::1756074779::1756265527::1::::<><><>0<>0<>a469996de8c80410a5d26eb5fe745e30<>res://.godot/imported/water_tiles.png-51b58a0890f58b138abcffbe1cae8dca.ctex::
-::res://Economy/::1756276674
-biscut_economy.gd::GDScript::6078129676528004594::1756240261::0::1::::<>Node<><>0<>0<><>::
-biscut_economy.tscn::PackedScene::7036367558288277873::1756276674::0::1::::<><><>0<>0<><>::uid://csuj54mcnxvkc::::res://Economy/biscut_economy.gd
-::res://Enemy/::1756276674
-enemy.gd::GDScript::2217614971851444183::1756266271::0::1::::EnemyUnit<>PathFollow2D<><>0<>0<><>::
-enemy.tscn::PackedScene::2791209753939516374::1756276674::0::1::::<><><>0<>0<><>::uid://6uh2asruvlxv::::res://Enemy/enemy.gd<>uid://da7krty4wyu42::::res://Enemy/Enemy_body.gd<>uid://c8aa4qscrg6aj::::res://Assets/3rd party/kenney_assets/characters/base_enemy_walk.png<>uid://dumwnlgv7py7l::::res://character_model.gd<>uid://co187hvt4w7st::::res://Assets/3rd party/bdragon1727_particals/Free Smoke Fx  Pixel 07.png
+::res://Economy/::1756449009
+biscuit_economy.gd::GDScript::6078129676528004594::1756448897::0::1::::<>Node<><>0<>0<><>::
+biscut_economy.tscn::PackedScene::7036367558288277873::1756449009::0::1::::<><><>0<>0<><>::uid://csuj54mcnxvkc::::res://Economy/biscuit_economy.gd
+::res://Enemy/::1756448233
+enemy.gd::GDScript/GDScript::2217614971851444183::1756266271::0::1::::EnemyUnit<>PathFollow2D<><>0<>0<><>::
+enemy.tscn::PackedScene::2791209753939516374::1756448233::0::1::::<><><>0<>0<><>::uid://6uh2asruvlxv::::res://Enemy/enemy.gd<>uid://da7krty4wyu42::::res://Enemy/Enemy_body.gd<>uid://c8aa4qscrg6aj::::res://Assets/3rd party/kenney_assets/characters/base_enemy_walk.png<>uid://dumwnlgv7py7l::::res://character_model.gd<>uid://co187hvt4w7st::::res://Assets/3rd party/bdragon1727_particals/Free Smoke Fx  Pixel 07.png
 Enemy_body.gd::GDScript/GDScript::7225960704000216709::1756156343::0::1::::<>CharacterBody2D<><>0<>0<><>::
-::res://Levels/::1756276674
-enemy_path_2d.gd::GDScript/GDScript::226302336520862066::1756148372::0::1::::EnemyPath<>Path2D<><>0<>0<><>::
-enemy_path_manager.gd::GDScript/GDScript::1617635019768460409::1756148887::0::1::::<>Node2D<><>0<>0<><>::
-level.tscn::PackedScene::1423242174788487966::1756276674::0::1::::<><><>0<>0<><>::uid://bfal8eghpy2ef::::res://Assets/3rd party/kenney_assets/tiles/basic_tiles.png<>uid://b3ojc0j3xr10p::::res://Assets/3rd party/kenney_assets/tiles/Building Tiles.png<>uid://c4s1nbu5r5fwv::::res://Assets/3rd party/kenney_assets/tiles/Decor.png<>uid://07u6jg45xofh::::res://Assets/3rd party/kenney_assets/tiles/walls.png<>uid://cyy0isfm61hkf::::res://Assets/3rd party/kenney_assets/tiles/water_tiles.png<>uid://dhvfwm7eck47::::res://Levels/enemy_path_2d.gd<>uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://xbuhhtucwj7f::::res://Levels/enemy_path_manager.gd<>uid://dtpji6lbouhvd::::res://tower_flow_container.tscn
-::res://Rounds/::1756265488
-wave_spawner.gd::GDScript/GDScript::3716645284001100174::1756238181::0::1::::<>Node<><>0<>0<><>::
+::res://Levels/::1756448233
+enemy_path_2d.gd::GDScript::226302336520862066::1756447060::0::1::::EnemyPath<>Path2D<><>0<>0<><>::
+enemy_path_manager.gd::GDScript::1617635019768460409::1756447861::0::1::::<>Node2D<><>0<>0<><>::
+level.tscn::PackedScene::1423242174788487966::1756448233::0::1::::<><><>0<>0<><>::uid://bfal8eghpy2ef::::res://Assets/3rd party/kenney_assets/tiles/basic_tiles.png<>uid://b3ojc0j3xr10p::::res://Assets/3rd party/kenney_assets/tiles/Building Tiles.png<>uid://c4s1nbu5r5fwv::::res://Assets/3rd party/kenney_assets/tiles/Decor.png<>uid://07u6jg45xofh::::res://Assets/3rd party/kenney_assets/tiles/walls.png<>uid://cyy0isfm61hkf::::res://Assets/3rd party/kenney_assets/tiles/water_tiles.png<>uid://dhvfwm7eck47::::res://Levels/enemy_path_2d.gd<>uid://c81rq7qh015ql::::res://Tower/tower.tscn<>uid://xbuhhtucwj7f::::res://Levels/enemy_path_manager.gd<>uid://dtpji6lbouhvd::::res://tower_flow_container.tscn<>uid://dcx4hmwt11xh3::::res://Levels/stats.gd
+stats.gd::GDScript::7348894385211269942::1756443453::0::1::::<>PanelContainer<><>0<>0<><>::
+::res://Rounds/::1756447733
+wave_spawner.gd::GDScript::3716645284001100174::1756447733::0::1::::<>Node<><>0<>0<><>::
 wave_spawner.tscn::PackedScene/PackedScene::8685948505738997629::1756265488::0::1::::<><><>0<>0<><>::uid://bs7mutf2f24gg::::res://Rounds/wave_spawner.gd
-::res://Tower/::1756276674
-tower.gd::GDScript::2318060871393175572::1756270845::0::1::::Tower<>CharacterBody2D<><>0<>0<><>::
-tower.tscn::PackedScene::7143809496442921955::1756276674::0::1::::<><><>0<>0<><>::uid://8a5ehg638c4k::::res://Tower/tower.gd<>uid://dumwnlgv7py7l::::res://character_model.gd<>uid://lg7gdum5r6cy::::res://Tower/tower_sprite_frame.tres
-tower_sprite_frame.tres::SpriteFrames::786417394126829120::1756271946::0::1::::<><><>0<>0<><>::uid://b3x26xdclpomc::::res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png
-::res://UI/::1756266338
-tower_container.gd::GDScript/GDScript::1367488590993617817::1756265409::0::1::::<>GridContainer<><>0<>0<><>::
-tower_container.tscn::PackedScene::7492843745940162487::1756266338::0::1::::<><><>0<>0<><>::uid://tqolp6jtv778::::res://UI/tower_container.gd
+::res://Tower/::1756448341
+range_visual_highlight.gd::GDScript::6556481410969200154::1756448341::0::1::::<>Panel<><>0<>0<><>::
+tower.gd::GDScript::2318060871393175572::1756448341::0::1::::Tower<>CharacterBody2D<><>0<>0<><>::
+tower.tscn::PackedScene::7143809496442921955::1756448341::0::1::::<><><>0<>0<><>::uid://8a5ehg638c4k::::res://Tower/tower.gd<>uid://c0oaj5krg6rvu::::res://Tower/range_visual_highlight.gd<>uid://dumwnlgv7py7l::::res://character_model.gd<>uid://lg7gdum5r6cy::::res://Tower/tower_sprite_frame.tres
+tower_sprite_frame.tres::SpriteFrames::786417394126829120::1756436843::0::1::::<><><>0<>0<><>::uid://b3x26xdclpomc::::res://Assets/3rd party/kenney_assets/characters/base_tower_idle_dark.png
+::res://UI/::1756436843
+tower_container.gd::GDScript::1367488590993617817::1756436843::0::1::::<>GridContainer<><>0<>0<><>::
+tower_container.tscn::PackedScene/PackedScene::7492843745940162487::1756266338::0::1::::<><><>0<>0<><>::uid://tqolp6jtv778::::res://UI/tower_container.gd

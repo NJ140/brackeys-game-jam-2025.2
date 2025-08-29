@@ -1,6 +1,7 @@
-res://main.tscn
-res://Tower/tower_sprite_frame.tres
 res://Levels/level.tscn
+res://Tower/tower_sprite_frame.tres
+res://UI/tower_container.gd
+res://main.tscn
 res://Tower/tower.tscn
 res://Enemy/enemy.tscn
 res://drop_tower.tscn
@@ -9,5 +10,15 @@ res://Economy/biscut_economy.tscn
 res://tower_flow_container.tscn
 res://event_bus.tscn
 res://player.tscn
-res://Economy/biscut_economy.gd
 res://player.gd
+res://event_bus.gd
+res://drop_tower.gd
+res://Levels/stats.gd
+res://Rounds/wave_spawner.gd
+res://Levels/enemy_path_2d.gd
+res://Levels/enemy_path_manager.gd
+res://Tower/tower.gd
+res://Tower/range_visual_highlight.gd
+res://Economy/biscut_economy.gd
+res://Economy/biscuit_economy.tscn
+res://Economy/biscuit_economy.gd

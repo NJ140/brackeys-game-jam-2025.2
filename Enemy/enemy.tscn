@@ -337,6 +337,7 @@ height = 48.0
 [node name="Enemy" type="PathFollow2D"]
 y_sort_enabled = true
 rotates = false
+loop = false
 script = ExtResource("1_7k104")
 health = 3
 attack_time = 1.0

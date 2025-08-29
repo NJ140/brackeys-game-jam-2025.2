@@ -605,11 +605,8 @@ collision_enabled = false
 y_sort_enabled = true
 position = Vector2(89.4118, 91.7647)
 
-[node name="Tower" parent="Towers" instance=ExtResource("6_ecu0b")]
-position = Vector2(299, 272)
-
 [node name="Tower2" parent="Towers" instance=ExtResource("6_ecu0b")]
-position = Vector2(481.176, 207.059)
+position = Vector2(299, 272)
 
 [node name="EnemyPathManager" type="Node2D" parent="."]
 y_sort_enabled = true

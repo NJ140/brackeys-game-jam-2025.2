@@ -1,6 +1,6 @@
 extends Node
 
-enum Type {
+enum Flavor {
 	Plain,
 	Fire,
 	Ice,
@@ -11,4 +11,4 @@ func _ready() -> void:
 	EventBus.ENEMY.defeted.connect(generate_enemy_loot_for_player)
 
 func generate_enemy_loot_for_player(defeted_enemy):
-	pass
+	EventBus.PLAYER.earn_buiscuts.emit({Flavor.Plain:3})

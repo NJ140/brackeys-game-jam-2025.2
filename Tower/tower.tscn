@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://c81rq7qh015ql"]
+[gd_scene load_steps=21 format=3 uid="uid://c81rq7qh015ql"]
 
 [ext_resource type="Script" uid="uid://8a5ehg638c4k" path="res://Tower/tower.gd" id="1_6pm6r"]
+[ext_resource type="Script" uid="uid://c0oaj5krg6rvu" path="res://Tower/range_visual_highlight.gd" id="2_e70sp"]
 [ext_resource type="Script" uid="uid://dumwnlgv7py7l" path="res://character_model.gd" id="2_okia5"]
 [ext_resource type="SpriteFrames" uid="uid://lg7gdum5r6cy" path="res://Tower/tower_sprite_frame.tres" id="3_okia5"]
 
@@ -163,6 +164,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_okia5")
+script = ExtResource("2_e70sp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 z_index = 1

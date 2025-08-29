@@ -1,5 +1,3 @@
 extends GridContainer
 
-var towers := {
-	{Tower.Ty}
-}
+var towers := {}

@@ -6,8 +6,8 @@ enum Type{
 	Mage,
 }
 
-const EnemyLayerMask = 2
-const BASE_HEALTH = 20
+const EnemyLayerMask := 2
+const BASE_HEALTH := 20
 
 @onready var attack_timer: Timer = %AttackTimer
 @onready var model: CharacterModel= %Model
@@ -17,18 +17,25 @@ const BASE_HEALTH = 20
 
 @export var base_projectile = preload("res://projectile.tscn")
 
-@export var attack_time := 1
-@export var projectile_speed := 300
-@export var damage := 1
+@export var projectile_speed := 300 #pixels/sec
 @export var disabled = false
 
 var dict_enemies_in_range:Dictionary= {}
 var current_target = null
 
+## Stats
+var health := BASE_HEALTH
+var range := 200 # pixel radius
+@export var damage := 1
+@export var attack_time :float= 0.1 ## attack rate in seconds
+
+var powers := []
+var modifiers := []
+
 func _ready() -> void:
 	attack_timer.wait_time = attack_time
 	model.sprite_2d.play("default")
-	EventBus.UI.new_focus.connect(
+	EventBus.UI.tower_selected.connect(
 		func(e): if e != self: hide_range()
 	)
 	
@@ -80,6 +87,10 @@ func get_enemies_in_range()-> Array:
 func take_damage(dmg:int):
 	model.do_damaged_animation()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_click") or event.is_action_pressed("right_click"):
+		hide_range()
+
 func heal(add:int):
 	pass
 
@@ -95,7 +106,49 @@ func hide_range():
 
 func _on_pickable_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
-		EventBus.UI.new_focus.emit(self)
+		EventBus.UI.tower_selected.emit(self)
 		show_range()
-	if event.is_action_pressed("right_click"):
-		hide_range()
+
+func add_power():
+	pass
+
+func get_value():
+	pass
+
+func get_sell_value():
+	pass
+
+func sell_tower():
+	pass
+
+class TowerData extends Resource:
+	@export var type:Tower.Type
+	@export var cost:int
+	@export var health:int
+	@export var range:int
+	@export var damage:int
+	@export var attack_time:int
+	@export var projectile_speed:int
+	@export var abilities:Array
+	
+	func _init(type,cost,health,range,damage,attack_time,projectile_speed,abilities) -> void:
+		self.type = type
+		self.cost = cost
+		self.health = health
+		self.range = range
+		self.damage = damage
+		self.attack_time = attack_time
+		self.projectile_speed = projectile_speed
+		self.abilities = abilities
+
+	static func RANGER():
+		var new_tower_data = TowerData.new(Type.Ranger,3,15,200,1,1,300,[])
+		return new_tower_data
+	
+	static func WARRIOR():
+		var new_tower_data = TowerData.new(Type.Warrior,5,30,100,2,0.75,150,[])
+		return new_tower_data
+	
+	static func MAGE():
+		var new_tower_data = TowerData.new(Type.Mage,5,8,300,1,2,200,[])
+		return new_tower_data

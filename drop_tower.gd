@@ -40,7 +40,7 @@ func _gui_input(event: InputEvent) -> void:
 		drop()
 
 func drop(): 
-	EventBus.TOWER.request_new_tower.emit(tower_data,get_global_mouse_position())
+	EventBus.UI.request_new_tower.emit(tower_data,get_global_mouse_position())
 	end_drag()
 	pass
 

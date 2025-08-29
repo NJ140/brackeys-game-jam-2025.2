@@ -1,6 +1,10 @@
-Label
-WorldEnvironment
+Button
+PanelContainer
+MarginContainer
 Panel
+VBoxContainer
+WorldEnvironment
+Label
 CanvasLayer
 ColorRect
 Node2D
@@ -9,7 +13,3 @@ GridContainer
 AnimationTree
 Path2D
 AnimatedSprite2D
-GPUParticles2D
-CPUParticles2D
-Node
-AnimationPlayer

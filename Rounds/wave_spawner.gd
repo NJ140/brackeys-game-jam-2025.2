@@ -1,14 +1,24 @@
 extends Node
 
 @export var rounds := [
-	[   # Round 1
-		Wave.new(EnemyUnit.Type.Jackle,10,65,40),
-	],
+	[Wave.new(EnemyUnit.Type.Jackle,10,65,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
 ]
 var enemy_unit_scene = preload("res://Enemy/enemy.tscn")
-var current_round_num := 0
+var current_round_num := -1
+var round_ongoing = false
+
+func _ready() -> void:
+	EventBus.WAVE.new_round.connect(new_round)
+	EventBus.WAVE.all_enemies_cleared.connect(round_ended)
 
 func _physics_process(_delta: float) -> void:
+	if round_ongoing:
+		do_round()
+	else:
+		set_physics_process(false)
+
+func do_round():
 	var waves_completed:int = 0
 	var current_round = rounds[current_round_num]
 	for wave:Wave in current_round:
@@ -21,8 +31,24 @@ func _physics_process(_delta: float) -> void:
 		EventBus.WAVE.spawned.emit(new_enemy,wave.perfered_path)
 		wave.count -= 1
 		
-	if waves_completed >= current_round.size():
+	if not waves_completed >= current_round.size(): return
+	EventBus.WAVE.no_more_enemies_to_spawn.emit()
+
+func round_ended():
+	round_ongoing = false
+	if not current_round_num >= rounds.size():
 		EventBus.WAVE.round_ended.emit(current_round_num)
+	else:
+		EventBus.PLAYER.win_game.emit(current_round_num)
+
+func new_round():
+	if round_ongoing or current_round_num > rounds.size(): return
+	current_round_num += 1
+	round_ongoing = true
+	if current_round_num >= rounds.size():
+		EventBus.WAVE.last_round_started.emit()
+	set_physics_process(true)
+
 
 class Wave extends Resource:
 	@export var enemy_id:EnemyUnit.Type = EnemyUnit.Type.Jackle
