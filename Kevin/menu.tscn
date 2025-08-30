@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1vu0kt0x70b8"]
 
-[ext_resource type="Script" path="res://Kevin/SlashPanel.gd" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://boft04s6jc0xj" path="res://Kevin/SlashPanel.gd" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://c5iayf7jmwr2b" path="res://Kevin/Menu.gd" id="1_ouk20"]
 
 [sub_resource type="Theme" id="Theme_xmn8a"]

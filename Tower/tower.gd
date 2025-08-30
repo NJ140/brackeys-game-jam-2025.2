@@ -8,15 +8,17 @@ enum Type{
 
 const EnemyLayerMask := 2
 const BASE_HEALTH := 20
-
 @onready var attack_timer: Timer = %AttackTimer
 @onready var model: CharacterModel= %Model
 @onready var attack_range : Area2D= %AttackRange
 @onready var projectile_point: Node2D = %Projectile_spawn
 @onready var range_visual: Panel = %RangeVisual
+@onready var shoot_sfx: AudioStreamPlayer = %ShootSFX
 
+static var tower_scene:=preload("res://Tower/tower.tscn")
 @export var base_projectile = preload("res://projectile.tscn")
 
+@export var type := Type.Ranger
 @export var projectile_speed := 300 #pixels/sec
 @export var disabled = false
 
@@ -51,6 +53,7 @@ func _try_attack():
 	var target_pos = get_target_pos()
 	if not base_projectile: return
 	create_projectile(target_pos)
+	shoot_sfx.play()
 	model.do_attack_animation()
 
 func create_projectile(target_pos):
@@ -108,7 +111,9 @@ func _on_pickable_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 	if event.is_action_pressed("left_click"):
 		EventBus.UI.tower_selected.emit(self)
 		show_range()
-
+func set_data(data:TowerData):
+	type = data.type
+	
 func add_power():
 	pass
 
@@ -120,6 +125,17 @@ func get_sell_value():
 
 func sell_tower():
 	pass
+
+static func CREATE(data:TowerData):
+	var tower:Tower= tower_scene.instantiate()
+	tower.type = data.type
+	tower.health = data.health
+	tower.range = data.range
+	tower.damage = data.damage
+	tower.attack_time = data.attack_time
+	tower.projectile_speed = data.projectile_speed
+	tower.abilities = data.abilities
+	return tower
 
 class TowerData extends Resource:
 	@export var type:Tower.Type
@@ -140,7 +156,14 @@ class TowerData extends Resource:
 		self.attack_time = attack_time
 		self.projectile_speed = projectile_speed
 		self.abilities = abilities
-
+	
+	static func GET_TOWER(type:Tower.Type):
+		match type:
+			Tower.Type.Ranger: return RANGER()
+			Tower.Type.Warrior: return WARRIOR()
+			Tower.Type.Mage: return MAGE()
+		return RANGER()
+		
 	static func RANGER():
 		var new_tower_data = TowerData.new(Type.Ranger,3,15,200,1,1,300,[])
 		return new_tower_data

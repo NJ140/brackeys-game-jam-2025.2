@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://c81rq7qh015ql"]
+[gd_scene load_steps=22 format=3 uid="uid://c81rq7qh015ql"]
 
 [ext_resource type="Script" uid="uid://8a5ehg638c4k" path="res://Tower/tower.gd" id="1_6pm6r"]
 [ext_resource type="Script" uid="uid://c0oaj5krg6rvu" path="res://Tower/range_visual_highlight.gd" id="2_e70sp"]
 [ext_resource type="Script" uid="uid://dumwnlgv7py7l" path="res://character_model.gd" id="2_okia5"]
 [ext_resource type="SpriteFrames" uid="uid://lg7gdum5r6cy" path="res://Tower/tower_sprite_frame.tres" id="3_okia5"]
+[ext_resource type="AudioStream" uid="uid://dp55lgmv1fe2v" path="res://Julian/SFX/sfx_take_damage.mp3" id="5_jnpw3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pm6r"]
 radius = 20.0
@@ -127,6 +128,7 @@ radius = 31.0483
 
 [node name="Tower" type="CharacterBody2D"]
 script = ExtResource("1_6pm6r")
+attack_time = 1.0
 
 [node name="Pickable" type="Area2D" parent="."]
 z_index = 1
@@ -220,6 +222,12 @@ unique_name_in_owner = true
 autostart = true
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="ShootSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_jnpw3")
+volume_db = -11.032
+pitch_scale = 2.83
 
 [connection signal="input_event" from="Pickable" to="." method="_on_pickable_input_event"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_range_body_entered"]

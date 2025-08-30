@@ -29,7 +29,7 @@ class Ui:
 
 ## Event intended for or emitted by Towers
 class _Tower:
-	pass
+	signal built(tower,pos)
 
 ## Event intended for or Emitted by the Player
 class _Player:

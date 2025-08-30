@@ -1,8 +1,8 @@
-res://Kevin/menu.tscn
-res://Kevin/ItemSlot.tscn
-res://Levels/level.tscn
-res://Tower/tower_sprite_frame.tres
 res://main.tscn
+res://Tower/tower_sprite_frame.tres
+res://default_bus_layout.tres
+res://Julian/StreamPlayer.tscn
+res://Levels/level.tscn
 res://Tower/tower.tscn
 res://Enemy/enemy.tscn
 res://drop_tower.tscn
@@ -10,6 +10,11 @@ res://projectile.tscn
 res://tower_flow_container.tscn
 res://event_bus.tscn
 res://player.tscn
-res://Kevin/Hud.tscn
-res://Kevin/Menu.gd
-res://Kevin/pages/SkillsPage.gd
+res://Enemy/enemy.gd
+res://Tower/tower.gd
+res://player.gd
+res://Tower/towers.gd
+res://event_bus.gd
+res://Kevin/pages/SkillNode.tscn
+res://Kevin/pages/SkillsPage.tscn
+res://Kevin/menu.tscn

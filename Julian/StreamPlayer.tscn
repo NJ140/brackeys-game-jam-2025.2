@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b87icyqquvp8n"]
+
+[ext_resource type="AudioStream" uid="uid://csbclaw1njlmr" path="res://Julian/jman_playlist.tres" id="1_bgaxy"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_bgaxy")
+autoplay = true
+stream_paused = true
+bus = &"Music"

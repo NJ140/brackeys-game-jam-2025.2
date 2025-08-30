@@ -16,6 +16,7 @@ const BASE_HEALTH = 3
 @onready var attack_timer: Timer = %AttackTimer
 @onready var attack_range: Area2D = %AttackRange
 @onready var character_body: CharacterBody2D = $CharacterBody2D
+@onready var audio_stream_player: AudioStreamPlayer = %DamageSFX
 
 @export var max_health := 3
 @export var health:int= min(BASE_HEALTH,max_health)
@@ -71,6 +72,7 @@ func next_position(travle_time:float):
 
 func take_damage(dmg:int):
 	health = max(health - dmg,0)
+	audio_stream_player.play()
 	if health <= 0:
 		EventBus.ENEMY.defeted.emit([self.unit_type,self.tags])
 		die()

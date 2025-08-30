@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ujouc3dufrxe"]
+[gd_scene load_steps=22 format=4 uid="uid://ujouc3dufrxe"]
 
 [ext_resource type="Texture2D" uid="uid://bfal8eghpy2ef" path="res://Assets/3rd party/kenney_assets/tiles/basic_tiles.png" id="1_uhyyw"]
 [ext_resource type="Texture2D" uid="uid://b3ojc0j3xr10p" path="res://Assets/3rd party/kenney_assets/tiles/Building Tiles.png" id="2_t80w2"]
@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://07u6jg45xofh" path="res://Assets/3rd party/kenney_assets/tiles/walls.png" id="4_ecu0b"]
 [ext_resource type="Texture2D" uid="uid://cyy0isfm61hkf" path="res://Assets/3rd party/kenney_assets/tiles/water_tiles.png" id="5_t2u7g"]
 [ext_resource type="Script" uid="uid://dhvfwm7eck47" path="res://Levels/enemy_path_2d.gd" id="6_8a2b0"]
+[ext_resource type="Script" uid="uid://b38oqgj30ajqf" path="res://Tower/towers.gd" id="6_eabcg"]
 [ext_resource type="PackedScene" uid="uid://c81rq7qh015ql" path="res://Tower/tower.tscn" id="6_ecu0b"]
 [ext_resource type="Script" uid="uid://xbuhhtucwj7f" path="res://Levels/enemy_path_manager.gd" id="6_t2u7g"]
 [ext_resource type="PackedScene" uid="uid://dtpji6lbouhvd" path="res://tower_flow_container.tscn" id="9_t2u7g"]
 [ext_resource type="Script" uid="uid://dcx4hmwt11xh3" path="res://Levels/stats.gd" id="10_vx8ih"]
+[ext_resource type="PackedScene" uid="uid://b87icyqquvp8n" path="res://Julian/StreamPlayer.tscn" id="11_ugh17"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uhyyw"]
 
@@ -573,6 +575,7 @@ collision_enabled = false
 [node name="Towers" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(89.4118, 91.7647)
+script = ExtResource("6_eabcg")
 
 [node name="Tower" parent="Towers" instance=ExtResource("6_ecu0b")]
 position = Vector2(299, 272)
@@ -651,5 +654,8 @@ text = "0"
 custom_minimum_size = Vector2(60, 40)
 layout_mode = 2
 text = "Start"
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("11_ugh17")]
+stream_paused = false
 
 [connection signal="pressed" from="HUD/Stats/MarginContainer/VBoxContainer/Button" to="HUD/Stats" method="_on_button_pressed"]

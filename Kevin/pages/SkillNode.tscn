@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpqwcr6ja74bh"]
 
-[ext_resource type="Script" uid="uid://or0my45o4v0k" path="res://pages/SkillNode.gd" id="1_ekx2k"]
+[ext_resource type="Script" uid="uid://or0my45o4v0k" path="res://Kevin/pages/SkillNode.gd" id="1_ekx2k"]
 
 [node name="SkillNode" type="Button"]
 offset_right = 8.0

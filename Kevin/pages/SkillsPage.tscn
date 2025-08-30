@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bn11q3sklls0u"]
 
-[ext_resource type="Script" uid="uid://csm25bpdrhi4u" path="res://pages/SkillsPage.gd" id="1_uuq13"]
+[ext_resource type="Script" uid="uid://csm25bpdrhi4u" path="res://Kevin/pages/SkillsPage.gd" id="1_uuq13"]
 
 [node name="SkillsPage" type="Control"]
 layout_mode = 3

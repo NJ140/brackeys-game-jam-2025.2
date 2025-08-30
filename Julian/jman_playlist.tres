@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamPlaylist" load_steps=4 format=3 uid="uid://csbclaw1njlmr"]
+
+[ext_resource type="AudioStream" uid="uid://5palfeu0n225" path="res://Julian/Music/theme_daytime_loop.mp3" id="1_krdyf"]
+[ext_resource type="AudioStream" uid="uid://cunldlhq85er0" path="res://Julian/Music/brackeys_game_jam_2025_song.mp3" id="2_ov7xj"]
+[ext_resource type="AudioStream" uid="uid://dcwedwx6agw3b" path="res://Julian/Music/theme_nighttime_loop.mp3" id="3_g8dp4"]
+
+[resource]
+stream_count = 3
+stream_0 = ExtResource("1_krdyf")
+stream_1 = ExtResource("2_ov7xj")
+stream_2 = ExtResource("3_g8dp4")
