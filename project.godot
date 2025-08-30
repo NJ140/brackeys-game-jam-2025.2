@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Barkeyes_Jam_2025_2"
-run/main_scene="uid://ujouc3dufrxe"
+run/main_scene="uid://b84b8iocicfyy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

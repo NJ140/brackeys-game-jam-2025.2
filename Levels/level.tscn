@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://ujouc3dufrxe"]
+[gd_scene load_steps=18 format=4 uid="uid://ujouc3dufrxe"]
 
 [ext_resource type="Texture2D" uid="uid://bfal8eghpy2ef" path="res://Assets/3rd party/kenney_assets/tiles/basic_tiles.png" id="1_uhyyw"]
 [ext_resource type="Texture2D" uid="uid://b3ojc0j3xr10p" path="res://Assets/3rd party/kenney_assets/tiles/Building Tiles.png" id="2_t80w2"]
@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyy0isfm61hkf" path="res://Assets/3rd party/kenney_assets/tiles/water_tiles.png" id="5_t2u7g"]
 [ext_resource type="Script" uid="uid://dhvfwm7eck47" path="res://Levels/enemy_path_2d.gd" id="6_8a2b0"]
 [ext_resource type="Script" uid="uid://b38oqgj30ajqf" path="res://Tower/towers.gd" id="6_eabcg"]
-[ext_resource type="PackedScene" uid="uid://c81rq7qh015ql" path="res://Tower/tower.tscn" id="6_ecu0b"]
 [ext_resource type="Script" uid="uid://xbuhhtucwj7f" path="res://Levels/enemy_path_manager.gd" id="6_t2u7g"]
-[ext_resource type="PackedScene" uid="uid://dtpji6lbouhvd" path="res://tower_flow_container.tscn" id="9_t2u7g"]
-[ext_resource type="Script" uid="uid://dcx4hmwt11xh3" path="res://Levels/stats.gd" id="10_vx8ih"]
 [ext_resource type="PackedScene" uid="uid://b87icyqquvp8n" path="res://Julian/StreamPlayer.tscn" id="11_ugh17"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uhyyw"]
@@ -530,9 +527,6 @@ _data = {
 }
 point_count = 8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2u7g"]
-bg_color = Color(0.176471, 0.176471, 0.176471, 0.756863)
-
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
 scale = Vector2(0.85, 0.85)
@@ -577,12 +571,6 @@ y_sort_enabled = true
 position = Vector2(89.4118, 91.7647)
 script = ExtResource("6_eabcg")
 
-[node name="Tower" parent="Towers" instance=ExtResource("6_ecu0b")]
-position = Vector2(299, 272)
-
-[node name="Tower2" parent="Towers" instance=ExtResource("6_ecu0b")]
-position = Vector2(481.176, 207.059)
-
 [node name="EnemyPathManager" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(89.4118, 91.7647)
@@ -593,68 +581,4 @@ y_sort_enabled = true
 curve = SubResource("Curve2D_uhyyw")
 script = ExtResource("6_8a2b0")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
-
-[node name="Panel" type="Panel" parent="HUD"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 382.0
-offset_top = 518.0
-offset_right = -399.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="TowerFlowContainer" parent="HUD/Panel" instance=ExtResource("9_t2u7g")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Stats" type="PanelContainer" parent="HUD"]
-offset_left = 21.0
-offset_top = 29.0
-offset_right = 71.735
-offset_bottom = 103.755
-size_flags_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_t2u7g")
-script = ExtResource("10_vx8ih")
-metadata/_edit_group_ = true
-
-[node name="MarginContainer" type="MarginContainer" parent="HUD/Stats"]
-layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HUD/Stats/MarginContainer"]
-layout_mode = 2
-
-[node name="Biscut" type="Label" parent="HUD/Stats/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "0"
-
-[node name="Health" type="Label" parent="HUD/Stats/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "0"
-
-[node name="Button" type="Button" parent="HUD/Stats/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(60, 40)
-layout_mode = 2
-text = "Start"
-
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("11_ugh17")]
-
-[connection signal="pressed" from="HUD/Stats/MarginContainer/VBoxContainer/Button" to="HUD/Stats" method="_on_button_pressed"]

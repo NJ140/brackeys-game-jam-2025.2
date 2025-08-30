@@ -37,5 +37,6 @@ class _Player:
 	signal lose_game
 	signal took_damage(strength)
 	signal build_tower_invalid(reason)
-	signal earn_buiscuts(biscuits:Dictionary[BiscuitEconomy.Flavor,int])
-	signal update_biscuit_count(biscuits:Dictionary[BiscuitEconomy.Flavor,int])
+	signal earn_biscuits(biscuits:Dictionary)
+	signal update_biscuit_count(biscuits:Dictionary)
+	signal not_enogh_biscuits()

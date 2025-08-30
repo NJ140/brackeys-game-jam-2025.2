@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c81rq7qh015ql"]
+[gd_scene load_steps=23 format=3 uid="uid://c81rq7qh015ql"]
 
 [ext_resource type="Script" uid="uid://8a5ehg638c4k" path="res://Tower/tower.gd" id="1_6pm6r"]
 [ext_resource type="Script" uid="uid://c0oaj5krg6rvu" path="res://Tower/range_visual_highlight.gd" id="2_e70sp"]
@@ -79,11 +79,15 @@ tracks/0/keys = {
 "values": [0.0, 0.174533, -0.349066, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_jnpw3"]
+resource_name = "fadin"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e70sp"]
 _data = {
 &"Damaged": SubResource("Animation_e70sp"),
 &"RESET": SubResource("Animation_okia5"),
-&"Shoot": SubResource("Animation_6pm6r")
+&"Shoot": SubResource("Animation_6pm6r"),
+&"fadin": SubResource("Animation_jnpw3")
 }
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_okia5"]
@@ -105,7 +109,7 @@ animation = &"Shoot"
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_nrwet"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_okia5"]
-graph_offset = Vector2(-423.405, -24.7686)
+graph_offset = Vector2(-352.743, 175.143)
 nodes/Add2/node = SubResource("AnimationNodeAdd2_okia5")
 nodes/Add2/position = Vector2(300, 180)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_fe3rl")
@@ -148,7 +152,6 @@ collision_mask = 2
 
 [node name="RangeVisual" type="Panel" parent="AttackRange"]
 unique_name_in_owner = true
-visible = false
 y_sort_enabled = true
 custom_minimum_size = Vector2(2.085, 0)
 anchors_preset = 8
@@ -169,7 +172,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_okia5")
 script = ExtResource("2_e70sp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-z_index = 1
+z_index = 10
 scale = Vector2(1, 0.5)
 shape = SubResource("CircleShape2D_okia5")
 debug_color = Color(0.70228, 0.701909, 0.67621, 0.42)
