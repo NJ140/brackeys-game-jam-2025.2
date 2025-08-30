@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://b84b8iocicfyy"]
+[gd_scene load_steps=8 format=3 uid="uid://b84b8iocicfyy"]
 
+[ext_resource type="PackedScene" uid="uid://cm442c4w5ybco" path="res://Kevin/pages/Title.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://ujouc3dufrxe" path="res://Levels/level.tscn" id="1_ig7tw"]
 
 [sub_resource type="Curve" id="Curve_h2yge"]
@@ -31,7 +32,10 @@ adjustment_color_correction = SubResource("CurveXYZTexture_eabcg")
 
 [node name="Main" type="Node"]
 
+[node name="Title" parent="." instance=ExtResource("1_0xm2m")]
+
 [node name="Level" parent="." instance=ExtResource("1_ig7tw")]
+visible = false
 position = Vector2(114, 55)
 scale = Vector2(0.7, 0.7)
 
