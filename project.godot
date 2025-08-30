@@ -54,3 +54,4 @@ left_click={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.85098, 0.717647, 0.529412, 1)

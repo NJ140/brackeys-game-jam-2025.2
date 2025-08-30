@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpy5lmwsdhtb0"]
 
-[ext_resource type="Script" uid="uid://c6o2c7388djni" path="res://pages/SystemPage.gd" id="1_gisef"]
+[ext_resource type="Script" uid="uid://c6o2c7388djni" path="res://Kevin/pages/SystemPage.gd" id="1_gisef"]
 
 [node name="SystemPage" type="Control"]
 layout_mode = 3

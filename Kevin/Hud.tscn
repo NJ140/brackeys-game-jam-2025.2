@@ -1,8 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhw5vbkjf8txr"]
+[gd_scene load_steps=11 format=3 uid="uid://bhw5vbkjf8txr"]
 
 [ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_d4yu0"]
 [ext_resource type="Script" uid="uid://b6nvjicyjc5bf" path="res://Kevin/hud.gd" id="1_lgd6n"]
 [ext_resource type="PackedScene" uid="uid://dbiavvx17xjcl" path="res://drop_tower.tscn" id="2_d2mpt"]
+[ext_resource type="Texture2D" uid="uid://2xhhyd5gjmxg" path="res://Assets/3rd party/kenney_assets/characters/ranger.png" id="4_83d8x"]
+[ext_resource type="Texture2D" uid="uid://bvxitljvfob8w" path="res://Assets/3rd party/kenney_assets/characters/warrior.png" id="5_6i81m"]
+[ext_resource type="Texture2D" uid="uid://bgj1wr2ne5vav" path="res://Assets/3rd party/kenney_assets/characters/mage.png" id="6_5avf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3ctf"]
+atlas = ExtResource("4_83d8x")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0y2g"]
+atlas = ExtResource("5_6i81m")
+region = Rect2(0, 0, 24, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v50fb"]
+atlas = ExtResource("6_5avf4")
+region = Rect2(0, 0, 24, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4yu0"]
 border_width_left = 1
@@ -193,12 +208,17 @@ columns = 3
 
 [node name="DropTower" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/TowerGrid" instance=ExtResource("2_d2mpt")]
 layout_mode = 2
+texture = SubResource("AtlasTexture_w3ctf")
 
 [node name="DropTower2" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/TowerGrid" instance=ExtResource("2_d2mpt")]
 layout_mode = 2
+texture = SubResource("AtlasTexture_r0y2g")
+tower_data = 1
 
 [node name="DropTower3" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/TowerGrid" instance=ExtResource("2_d2mpt")]
 layout_mode = 2
+texture = SubResource("AtlasTexture_v50fb")
+tower_data = 2
 
 [node name="ChallengePanel" type="PanelContainer" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar"]
 custom_minimum_size = Vector2(280, 120)

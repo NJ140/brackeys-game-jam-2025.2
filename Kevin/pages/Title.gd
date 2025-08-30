@@ -2,13 +2,14 @@
 extends Control
 
 @export var next_scene: PackedScene
+@export var options_scene: PackedScene
 
 @onready var play_btn: Button     = %PlayButton
 @onready var options_btn: Button  = %OptionsButton
 @onready var quit_btn: Button     = %QuitButton
 
 # Will be null if the node doesn't exist – no errors.
-@onready var anim: AnimationPlayer = get_node_or_null("AnimationPlayer")
+@onready var anim: AnimationPlayer = $Fade/AnimationPlayer
 
 func _ready() -> void:
 	# Nice default focus
@@ -24,8 +25,8 @@ func _ready() -> void:
 		play_btn.pressed.connect(_start_game)
 	if options_btn:
 		options_btn.pressed.connect(_open_options)
-	if quit_btn:
-		quit_btn.pressed.connect(_quit)
+	#if quit_btn:
+		#quit_btn.pressed.connect(_quit)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
@@ -44,5 +45,18 @@ func _open_options() -> void:
 	# placeholder for now
 	print("Options pressed")
 
-func _quit() -> void:
-	get_tree().quit()
+#func _quit() -> void:
+	#get_tree().quit()
+
+func _on_play_button_pressed() -> void:
+	if anim:
+		anim.play("fade_out")
+		await anim.animation_finished
+	get_tree().change_scene_to_packed(next_scene)
+
+func _on_options_button_pressed() -> void:
+	get_tree().change_scene_to_packed(options_scene)
+
+
+#func _on_quit_button_pressed() -> void:
+	#get_tree().quit()

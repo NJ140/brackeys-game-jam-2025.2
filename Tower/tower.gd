@@ -8,9 +8,11 @@ enum Type{
 
 const EnemyLayerMask := 2
 const BASE_HEALTH := 20
+
 @onready var attack_timer: Timer = %AttackTimer
 @onready var model: CharacterModel= %Model
 @onready var attack_range : Area2D= %AttackRange
+@onready var range_shape: CollisionShape2D = %AttackShape
 @onready var projectile_point: Node2D = %Projectile_spawn
 @onready var range_visual: Panel = %RangeVisual
 @onready var shoot_sfx: AudioStreamPlayer = %ShootSFX
@@ -28,9 +30,21 @@ var current_target = null
 
 ## Stats
 var health := BASE_HEALTH
-var range := 200 # pixel radius
+@onready var range := 200:
+	get:
+		var circle_range : CircleShape2D = range_shape.shape
+		return circle_range.radius
+	set(r):
+		if not is_node_ready():
+			await ready
+		var circle_range : CircleShape2D = range_shape.shape
+		range_visual.size = Vector2.ONE * r
+		var ratio_y =  range_visual.scale.y/range_visual.scale.x
+		range_visual.position = Vector2(-r,-r*ratio_y)
+		circle_range.radius = r
+		
 @export var damage := 1
-@export var attack_time :float= 0.1 ## attack rate in seconds
+@export var attack_time :float= 1 ## attack rate in seconds
 
 var powers := []
 var modifiers := []
@@ -41,6 +55,13 @@ func _ready() -> void:
 	EventBus.UI.tower_selected.connect(
 		func(e): if e != self: hide_range()
 	)
+	match type:
+		Type.Ranger:
+			model.sprite_2d.animation = "ranger"
+		Type.Warrior:
+			model.sprite_2d.animation = "warrior"
+		Type.Mage:
+			model.sprite_2d.animation = "mage"
 	
 func _physics_process(delta: float) -> void:
 	if not current_target: return
@@ -144,7 +165,7 @@ class TowerData extends Resource:
 	@export var health:int
 	@export var range:int
 	@export var damage:int
-	@export var attack_time:int
+	@export var attack_time:float
 	@export var projectile_speed:int
 	@export var abilities:Array
 	
@@ -170,7 +191,7 @@ class TowerData extends Resource:
 		return new_tower_data
 	
 	static func WARRIOR():
-		var new_tower_data = TowerData.new(Type.Warrior,5,30,100,2,0.75,150,[])
+		var new_tower_data = TowerData.new(Type.Warrior,5,30,100,2,0.5,150,[])
 		return new_tower_data
 	
 	static func MAGE():

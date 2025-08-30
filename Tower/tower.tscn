@@ -10,15 +10,15 @@
 radius = 20.0
 height = 60.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_okia5"]
+radius = 200.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okia5"]
 bg_color = Color(0.877891, 0.443416, 0.535123, 0.588235)
 corner_radius_top_left = 200000
 corner_radius_top_right = 200000
 corner_radius_bottom_right = 200000
 corner_radius_bottom_left = 200000
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_okia5"]
-radius = 200.0
 
 [sub_resource type="Animation" id="Animation_e70sp"]
 resource_name = "Damaged"
@@ -132,7 +132,6 @@ radius = 31.0483
 
 [node name="Tower" type="CharacterBody2D"]
 script = ExtResource("1_6pm6r")
-attack_time = 1.0
 
 [node name="Pickable" type="Area2D" parent="."]
 z_index = 1
@@ -149,6 +148,13 @@ unique_name_in_owner = true
 y_sort_enabled = true
 collision_layer = 32
 collision_mask = 2
+
+[node name="AttackShape" type="CollisionShape2D" parent="AttackRange"]
+unique_name_in_owner = true
+z_index = 10
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_okia5")
+debug_color = Color(0.70228, 0.701909, 0.67621, 0.42)
 
 [node name="RangeVisual" type="Panel" parent="AttackRange"]
 unique_name_in_owner = true
@@ -171,12 +177,6 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_okia5")
 script = ExtResource("2_e70sp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
-z_index = 10
-scale = Vector2(1, 0.5)
-shape = SubResource("CircleShape2D_okia5")
-debug_color = Color(0.70228, 0.701909, 0.67621, 0.42)
-
 [node name="Model" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_okia5")
@@ -188,7 +188,8 @@ texture_filter = 1
 position = Vector2(0, -30)
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("3_okia5")
-frame_progress = 0.119241
+animation = &"mage"
+frame_progress = 0.789018
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
 root_node = NodePath("../..")
