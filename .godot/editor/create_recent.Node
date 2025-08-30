@@ -1,10 +1,8 @@
-AudioStreamPlayer
-CanvasLayer
 ColorRect
-Container
-AspectRatioContainer
-Control
-MarginContainer
+TextureProgressBar
+ProgressBar
+Node2D
+Marker2D
 AnimationPlayer
 Label
 Button
