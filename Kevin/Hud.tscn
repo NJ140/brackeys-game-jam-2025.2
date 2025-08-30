@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhw5vbkjf8txr"]
+[gd_scene load_steps=6 format=3 uid="uid://bhw5vbkjf8txr"]
 
-[ext_resource type="PackedScene" uid="uid://ujouc3dufrxe" path="res://Levels/level.tscn" id="1_d2mpt"]
 [ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_d4yu0"]
 
 [sub_resource type="Gradient" id="Gradient_d4yu0"]
@@ -30,17 +29,30 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Margin" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 1312.0
-offset_bottom = 763.0
+custom_minimum_size = Vector2(0, 580)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -50.0
+offset_right = 4.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 65
 
 [node name="Main" type="VBoxContainer" parent="Margin"]
 layout_mode = 2
 theme_override_constants/separation = 2
 
 [node name="TopBar" type="HBoxContainer" parent="Margin/Main"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+size_flags_vertical = 2
 
 [node name="LeftStack" type="VBoxContainer" parent="Margin/Main/TopBar"]
 layout_mode = 2
@@ -56,7 +68,8 @@ stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Health"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Health number"
 
 [node name="Biscuits" type="HBoxContainer" parent="Margin/Main/TopBar/LeftStack"]
@@ -69,25 +82,29 @@ stretch_mode = 5
 
 [node name="BiscuitLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Biscuits"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
 text = "Biscuit number"
 
 [node name="RoundCenter" type="CenterContainer" parent="Margin/Main/TopBar"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 10
 
 [node name="Label" type="Label" parent="Margin/Main/TopBar/RoundCenter"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
 text = "Round 1 / 20"
 horizontal_alignment = 1
 
 [node name="RightButtons" type="HBoxContainer" parent="Margin/Main/TopBar"]
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
 theme_override_constants/separation = 8
+alignment = 2
 
 [node name="TextureButton" type="TextureButton" parent="Margin/Main/TopBar/RightButtons"]
-custom_minimum_size = Vector2(120, 44)
+custom_minimum_size = Vector2(60, 30)
 layout_mode = 2
 texture_normal = SubResource("GradientTexture2D_n10im")
 stretch_mode = 0
@@ -117,32 +134,18 @@ theme_override_constants/separation = 8
 [node name="PlayRow" type="HBoxContainer" parent="Margin/Main/ContentFill"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 12
-
-[node name="StageWrap" type="PanelContainer" parent="Margin/Main/ContentFill/PlayRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="StageCenter" type="CenterContainer" parent="Margin/Main/ContentFill/PlayRow/StageWrap"]
-layout_mode = 2
-
-[node name="Stage" type="ColorRect" parent="Margin/Main/ContentFill/PlayRow/StageWrap/StageCenter"]
-custom_minimum_size = Vector2(900, 520)
-layout_mode = 2
-color = Color(0.666667, 0.666667, 0.666667, 1)
-
-[node name="Level" parent="Margin/Main/ContentFill/PlayRow/StageWrap/StageCenter/Stage" instance=ExtResource("1_d2mpt")]
-scale = Vector2(0.645, 0.645)
+theme_override_constants/separation = 16
+alignment = 2
 
 [node name="RightSidebar" type="VBoxContainer" parent="Margin/Main/ContentFill/PlayRow"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 8
 
 [node name="RightTitle" type="Label" parent="Margin/Main/ContentFill/PlayRow/RightSidebar"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Power Biscuits (3)"
+text = "Power Biscuits"
 
 [node name="PowerBar" type="HBoxContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar"]
 layout_mode = 2
@@ -180,54 +183,48 @@ size_flags_vertical = 3
 columns = 3
 
 [node name="Tower1" type="TextureButton" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/TowerGrid"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Tower2" type="TextureButton" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/TowerGrid"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Tower3" type="TextureButton" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/TowerGrid"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="BottomBar" type="HBoxContainer" parent="Margin/Main/ContentFill"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 12
-alignment = 1
-
-[node name="ChallengePanel" type="PanelContainer" parent="Margin/Main/ContentFill/BottomBar"]
-custom_minimum_size = Vector2(360, 120)
+[node name="ChallengePanel" type="PanelContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar"]
+custom_minimum_size = Vector2(280, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_d4yu0")
 
-[node name="CardMargin" type="MarginContainer" parent="Margin/Main/ContentFill/BottomBar/ChallengePanel"]
+[node name="CardMargin" type="MarginContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/ChallengePanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="ChallengeVbox" type="VBoxContainer" parent="Margin/Main/ContentFill/BottomBar/ChallengePanel/CardMargin"]
+[node name="ChallengeVbox" type="VBoxContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/ChallengePanel/CardMargin"]
 layout_mode = 2
 
-[node name="ChallengeLabel" type="Label" parent="Margin/Main/ContentFill/BottomBar/ChallengePanel/CardMargin/ChallengeVbox"]
+[node name="ChallengeLabel" type="Label" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/ChallengePanel/CardMargin/ChallengeVbox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Challenge"
 
-[node name="ChallengeRich" type="RichTextLabel" parent="Margin/Main/ContentFill/BottomBar/ChallengePanel/CardMargin/ChallengeVbox"]
+[node name="ChallengeRich" type="RichTextLabel" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/ChallengePanel/CardMargin/ChallengeVbox"]
 layout_mode = 2
 text = "• Survive 3 waves without leaking.
 • Place ≤ 5 towers.
@@ -236,28 +233,28 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="RewardPanel" type="PanelContainer" parent="Margin/Main/ContentFill/BottomBar"]
-custom_minimum_size = Vector2(360, 120)
+[node name="RewardPanel" type="PanelContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar"]
+custom_minimum_size = Vector2(280, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_d4yu0")
 
-[node name="CardMargin" type="MarginContainer" parent="Margin/Main/ContentFill/BottomBar/RewardPanel"]
+[node name="CardMargin" type="MarginContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/RewardPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="RewardVbox" type="VBoxContainer" parent="Margin/Main/ContentFill/BottomBar/RewardPanel/CardMargin"]
+[node name="RewardVbox" type="VBoxContainer" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/RewardPanel/CardMargin"]
 layout_mode = 2
 
-[node name="RewardLabel" type="Label" parent="Margin/Main/ContentFill/BottomBar/RewardPanel/CardMargin/RewardVbox"]
+[node name="RewardLabel" type="Label" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/RewardPanel/CardMargin/RewardVbox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Reward"
 
-[node name="RewardRich" type="RichTextLabel" parent="Margin/Main/ContentFill/BottomBar/RewardPanel/CardMargin/RewardVbox"]
+[node name="RewardRich" type="RichTextLabel" parent="Margin/Main/ContentFill/PlayRow/RightSidebar/RewardPanel/CardMargin/RewardVbox"]
 layout_mode = 2
 text = "• +50 Biscuits
 • +1 Power Biscuit

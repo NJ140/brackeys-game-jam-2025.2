@@ -1,15 +1,3 @@
-res://Kevin/menu.tscn
-res://Kevin/ItemSlot.tscn
-res://Levels/level.tscn
-res://Tower/tower_sprite_frame.tres
-res://main.tscn
-res://Tower/tower.tscn
-res://Enemy/enemy.tscn
-res://drop_tower.tscn
-res://projectile.tscn
-res://tower_flow_container.tscn
-res://event_bus.tscn
-res://player.tscn
 res://Kevin/Hud.tscn
-res://Kevin/Menu.gd
-res://Kevin/pages/SkillsPage.gd
+res://Tower/tower_sprite_frame.tres
+res://Kevin/menu.tscn
