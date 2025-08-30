@@ -17,4 +17,6 @@ res://Tower/towers.gd
 res://event_bus.gd
 res://Kevin/pages/SkillNode.tscn
 res://Kevin/pages/SkillsPage.tscn
+res://Kevin/Hud.tscn
+res://Tower/tower_sprite_frame.tres
 res://Kevin/menu.tscn

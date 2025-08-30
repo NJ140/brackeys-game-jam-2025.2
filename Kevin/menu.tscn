@@ -17,9 +17,9 @@ script = ExtResource("1_ouk20")
 [node name="Bg" type="ColorRect" parent="."]
 layout_mode = 2
 offset_left = 21.0
-offset_top = 18.0
-offset_right = 1253.0
-offset_bottom = 690.0
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 649.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0392157, 0.0392157, 0.0392157, 1)
