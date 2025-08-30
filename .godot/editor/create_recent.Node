@@ -1,5 +1,9 @@
-AnimationPlayer
 ColorRect
+TextureProgressBar
+ProgressBar
+Node2D
+Marker2D
+AnimationPlayer
 Label
 Button
 VBoxContainer
@@ -8,7 +12,3 @@ CenterContainer
 MarginContainer
 AudioStreamPlayer
 AudioStreamPlayer2D
-RichTextLabel
-HBoxContainer
-Container
-Panel
