@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba2jcakh817iv"]
+
+[ext_resource type="Script" uid="uid://dpwt3pf6kmkw7" path="res://Kevin/pages/Title.gd" id="1_b6mcg"]
+[ext_resource type="PackedScene" uid="uid://b84b8iocicfyy" path="res://main.tscn" id="2_x7280"]
+[ext_resource type="PackedScene" uid="uid://dpy5lmwsdhtb0" path="res://Kevin/pages/SystemPage.tscn" id="3_lwuw4"]
+[ext_resource type="FontFile" uid="uid://b4hpnlbwigbwg" path="res://Assets/Fonts/Suez_One/SuezOne-Regular.ttf" id="4_pansp"]
+[ext_resource type="FontFile" uid="uid://jxs1utfqg3bj" path="res://Assets/Fonts/Cabin/Cabin-VariableFont_wdth,wght.ttf" id="5_7nrwl"]
+[ext_resource type="PackedScene" uid="uid://d31m8j4ym6tju" path="res://Fade.tscn" id="6_5qkyw"]
+[ext_resource type="AudioStream" uid="uid://5palfeu0n225" path="res://Julian/Music/theme_daytime_loop.mp3" id="7_mnr42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sflr"]
+bg_color = Color(0.635294, 0.505882, 0.313726, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.360784, 0.227451, 0.129412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_b6mcg")
+next_scene = ExtResource("2_x7280")
+options_scene = ExtResource("3_lwuw4")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.022971, 0.0563318, 0.176493, 1)
+
+[node name="DuneBar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 489.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.736866, 0.596038, 0.393229, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="CenterContainer" parent="Margin"]
+layout_mode = 2
+
+[node name="Column" type="VBoxContainer" parent="Margin/Center"]
+custom_minimum_size = Vector2(480, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Logo" type="TextureRect" parent="Margin/Center/Column"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="GameTitle" type="Label" parent="Margin/Center/Column"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.635294, 0.505882, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0.85098, 0.717647, 0.529412, 1)
+theme_override_fonts/font = ExtResource("4_pansp")
+theme_override_font_sizes/font_size = 65
+text = "You Win!!!"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Margin/Center/Column"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="Margin/Center/Column/Buttons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("5_7nrwl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8sflr")
+text = "Play Again"
+
+[node name="OptionsButton" type="Button" parent="Margin/Center/Column/Buttons"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("5_7nrwl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8sflr")
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="Margin/Center/Column/Buttons"]
+visible = false
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("5_7nrwl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8sflr")
+text = "Quit"
+
+[node name="Credit" type="Label" parent="Margin/Center/Column/Buttons"]
+modulate = Color(0.654232, 0.654232, 0.654232, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("5_7nrwl")
+theme_override_font_sizes/font_size = 14
+text = "Credit: Nollo, Souless and Nivek"
+horizontal_alignment = 1
+
+[node name="Version" type="Label" parent="Margin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.360784, 0.227451, 0.129412, 1)
+theme_override_fonts/font = ExtResource("5_7nrwl")
+text = "v1.0.0"
+
+[node name="Fade" parent="." instance=ExtResource("6_5qkyw")]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mnr42")
+autoplay = true
+
+[connection signal="pressed" from="Margin/Center/Column/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Margin/Center/Column/Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Margin/Center/Column/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="Fade"]
