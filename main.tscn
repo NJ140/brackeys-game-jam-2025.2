@@ -6,7 +6,8 @@
 [node name="Main" type="Node"]
 
 [node name="Level" parent="." instance=ExtResource("1_ig7tw")]
-position = Vector2(-70, 49)
+position = Vector2(-83, 49)
 scale = Vector2(0.75, 0.75)
 
 [node name="Hud" parent="." instance=ExtResource("2_0xm2m")]
+z_index = 4

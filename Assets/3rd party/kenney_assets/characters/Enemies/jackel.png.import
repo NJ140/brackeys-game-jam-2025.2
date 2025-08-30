@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj3bex2xhn51h"
-path="res://.godot/imported/base_enemy_idle.png-102d8c236f61dd74804c9c68ab4ddd25.ctex"
+uid="uid://c8aa4qscrg6aj"
+path="res://.godot/imported/jackel.png-8e96c046ed150ca594d8dfda7770ef68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3rd party/kenney_assets/characters/base_enemy_idle.png"
-dest_files=["res://.godot/imported/base_enemy_idle.png-102d8c236f61dd74804c9c68ab4ddd25.ctex"]
+source_file="res://Assets/3rd party/kenney_assets/characters/Enemies/jackel.png"
+dest_files=["res://.godot/imported/jackel.png-8e96c046ed150ca594d8dfda7770ef68.ctex"]
 
 [params]
 

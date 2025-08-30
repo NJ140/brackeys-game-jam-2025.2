@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgj1wr2ne5vav"
-path="res://.godot/imported/mage.png-2f085bcb0323cdc6f2ac67b43b8e5252.ctex"
+uid="uid://bvxitljvfob8w"
+path="res://.godot/imported/warrior.png-93c9c414a1c8aa693878083045b0b14e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3rd party/kenney_assets/characters/mage.png"
-dest_files=["res://.godot/imported/mage.png-2f085bcb0323cdc6f2ac67b43b8e5252.ctex"]
+source_file="res://Assets/3rd party/kenney_assets/characters/Towers/warrior.png"
+dest_files=["res://.godot/imported/warrior.png-93c9c414a1c8aa693878083045b0b14e.ctex"]
 
 [params]
 

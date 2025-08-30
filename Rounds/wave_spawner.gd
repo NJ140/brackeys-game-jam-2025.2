@@ -3,13 +3,20 @@ extends Node
 @export var rounds := [
 	[Wave.new(EnemyUnit.Type.Jackle,10,65,40),],
 	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
+	[Wave.new(EnemyUnit.Type.Jackle,20,40,40),],
 ]
 var enemy_unit_scene = preload("res://Enemy/enemy.tscn")
-var current_round_num := -1
+var current_round_num := 0
 var round_ongoing = false
 
 func _ready() -> void:
-	EventBus.WAVE.new_round.connect(new_round)
+	EventBus.UI.request_new_round.connect(new_round)
 	EventBus.WAVE.all_enemies_cleared.connect(round_ended)
 
 func _physics_process(_delta: float) -> void:
@@ -47,6 +54,7 @@ func new_round():
 	round_ongoing = true
 	if current_round_num >= rounds.size():
 		EventBus.WAVE.last_round_started.emit()
+	EventBus.WAVE.new_round.emit(current_round_num)
 	set_physics_process(true)
 
 

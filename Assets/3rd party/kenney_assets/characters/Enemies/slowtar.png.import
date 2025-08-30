@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvxitljvfob8w"
-path="res://.godot/imported/warrior.png-66ec99080770adfce6fdfd8087230a9d.ctex"
+uid="uid://div61l8xpm0cg"
+path="res://.godot/imported/slowtar.png-b5b54e5afeafb465b74cdaa7bebeb025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3rd party/kenney_assets/characters/warrior.png"
-dest_files=["res://.godot/imported/warrior.png-66ec99080770adfce6fdfd8087230a9d.ctex"]
+source_file="res://Assets/3rd party/kenney_assets/characters/Enemies/slowtar.png"
+dest_files=["res://.godot/imported/slowtar.png-b5b54e5afeafb465b74cdaa7bebeb025.ctex"]
 
 [params]
 

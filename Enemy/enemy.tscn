@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://bf1c21jlowx3s"]
+[gd_scene load_steps=40 format=3 uid="uid://bf1c21jlowx3s"]
 
 [ext_resource type="Script" uid="uid://6uh2asruvlxv" path="res://Enemy/enemy.gd" id="1_7k104"]
 [ext_resource type="Script" uid="uid://da7krty4wyu42" path="res://Enemy/Enemy_body.gd" id="2_am0pq"]
-[ext_resource type="Texture2D" uid="uid://c8aa4qscrg6aj" path="res://Assets/3rd party/kenney_assets/characters/base_enemy_walk.png" id="2_px1sc"]
+[ext_resource type="PackedScene" uid="uid://c78r0lraedxvl" path="res://Kevin/Healthbar.tscn" id="2_glvfu"]
+[ext_resource type="Texture2D" uid="uid://c8aa4qscrg6aj" path="res://Assets/3rd party/kenney_assets/characters/Enemies/jackel.png" id="2_px1sc"]
 [ext_resource type="Script" uid="uid://dumwnlgv7py7l" path="res://character_model.gd" id="3_eqilm"]
 [ext_resource type="Texture2D" uid="uid://co187hvt4w7st" path="res://Assets/3rd party/bdragon1727_particals/Free Smoke Fx  Pixel 07.png" id="5_m6jha"]
 [ext_resource type="AudioStream" uid="uid://dp55lgmv1fe2v" path="res://Julian/SFX/sfx_take_damage.mp3" id="6_m6jha"]
@@ -343,6 +344,17 @@ script = ExtResource("1_7k104")
 health = 3
 attack_time = 1.0
 
+[node name="Healthbar" parent="." instance=ExtResource("2_glvfu")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 5)
+offset_left = -20.0
+offset_top = -57.0
+offset_right = 20.0
+offset_bottom = -52.0
+
+[node name="ProgressBar" parent="Healthbar" index="0"]
+visible = false
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 0
@@ -409,3 +421,5 @@ bus = &"SFX"
 [connection signal="on_damage" from="CharacterBody2D" to="." method="_on_character_body_2d_on_damage"]
 [connection signal="body_entered" from="CharacterBody2D/AttackRange" to="." method="_on_attack_range_body_entered"]
 [connection signal="timeout" from="CharacterBody2D/AttackTimer" to="." method="_on_attack_timer_timeout"]
+
+[editable path="Healthbar"]

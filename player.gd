@@ -20,7 +20,7 @@ func _ready() -> void:
 	EventBus.PLAYER.update_biscuit_count.emit(biscuits)
 
 func take_damage(strength):
-	EventBus.PLAYER.took_damage.emit(strength)
+	EventBus.PLAYER.took_damage.emit(health,strength)
 	health = max(health - strength, 0)
 	if health <= 0:
 		EventBus.PLAYER.lose_game.emit()

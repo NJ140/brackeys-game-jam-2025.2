@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_d4yu0"]
 [ext_resource type="Script" uid="uid://b6nvjicyjc5bf" path="res://Kevin/hud.gd" id="1_lgd6n"]
 [ext_resource type="PackedScene" uid="uid://dbiavvx17xjcl" path="res://drop_tower.tscn" id="2_d2mpt"]
-[ext_resource type="Texture2D" uid="uid://2xhhyd5gjmxg" path="res://Assets/3rd party/kenney_assets/characters/ranger.png" id="4_83d8x"]
-[ext_resource type="Texture2D" uid="uid://bvxitljvfob8w" path="res://Assets/3rd party/kenney_assets/characters/warrior.png" id="5_6i81m"]
-[ext_resource type="Texture2D" uid="uid://bgj1wr2ne5vav" path="res://Assets/3rd party/kenney_assets/characters/mage.png" id="6_5avf4"]
+[ext_resource type="Texture2D" uid="uid://2xhhyd5gjmxg" path="res://Assets/3rd party/kenney_assets/characters/Towers/ranger.png" id="4_83d8x"]
+[ext_resource type="Texture2D" uid="uid://bvxitljvfob8w" path="res://Assets/3rd party/kenney_assets/characters/Towers/warrior.png" id="5_6i81m"]
+[ext_resource type="Texture2D" uid="uid://bgj1wr2ne5vav" path="res://Assets/3rd party/kenney_assets/characters/Towers/mage.png" id="6_5avf4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w3ctf"]
 atlas = ExtResource("4_83d8x")
@@ -75,13 +75,13 @@ size_flags_vertical = 8
 layout_mode = 2
 size_flags_horizontal = 0
 
-[node name="HealthLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Health"]
+[node name="HealhIcon" type="Label" parent="Margin/Main/TopBar/LeftStack/Health"]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 24
 text = "💖"
 
-[node name="HealthLabel2" type="Label" parent="Margin/Main/TopBar/LeftStack/Health"]
+[node name="HealthLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Health"]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 24
@@ -90,13 +90,13 @@ text = "20"
 [node name="Biscuits" type="HBoxContainer" parent="Margin/Main/TopBar/LeftStack"]
 layout_mode = 2
 
-[node name="BiscuitLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Biscuits"]
+[node name="BiscuitIcon" type="Label" parent="Margin/Main/TopBar/LeftStack/Biscuits"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "🍪"
 
-[node name="BiscuitLabel2" type="Label" parent="Margin/Main/TopBar/LeftStack/Biscuits"]
+[node name="BiscuitLabel" type="Label" parent="Margin/Main/TopBar/LeftStack/Biscuits"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 24
@@ -107,7 +107,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="Margin/Main/TopBar/RoundCenter"]
+[node name="RoundLabel" type="Label" parent="Margin/Main/TopBar/RoundCenter"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Round 1 / 20"

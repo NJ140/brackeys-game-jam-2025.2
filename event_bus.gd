@@ -26,6 +26,7 @@ class Ui:
 	signal request_power_up_tower(tower:Tower,flavor)
 	signal request_level_up_tower(tower:Tower)
 	signal tower_selected(tower:Tower)
+	signal request_new_round
 
 ## Event intended for or emitted by Towers
 class _Tower:
@@ -35,7 +36,7 @@ class _Tower:
 class _Player:
 	signal win_game
 	signal lose_game
-	signal took_damage(strength)
+	signal took_damage(current_health,strength)
 	signal build_tower_invalid(reason)
 	signal earn_biscuits(biscuits:Dictionary)
 	signal update_biscuit_count(biscuits:Dictionary)

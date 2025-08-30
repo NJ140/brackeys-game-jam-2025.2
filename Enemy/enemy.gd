@@ -6,17 +6,20 @@ enum EnemyState{
 	Dead,
 }
 enum Type{
-	Jackle
+	Jackle,
+	Slowtar,
 }
 	
 const SPEED = 50.0
 const BASE_HEALTH = 3
 
 @onready var model: CharacterModel = %Model
+@onready var health_bar: ProgressBar = %Healthbar/ProgressBar
 @onready var attack_timer: Timer = %AttackTimer
 @onready var attack_range: Area2D = %AttackRange
 @onready var character_body: CharacterBody2D = $CharacterBody2D
 @onready var audio_stream_player: AudioStreamPlayer = %DamageSFX
+@export var enemy_scene: =preload("res://Enemy/enemy.tscn")
 
 @export var max_health := 3
 @export var health:int= min(BASE_HEALTH,max_health)
@@ -37,6 +40,14 @@ var current_path :Path2D= null
 
 @export var attack_time := 5.0
 
+static func CREATE(type:Type):
+	#var enemy:Enemy = 
+	match type:
+		Type.Jackle:
+			return
+		Type.Slowtar:
+			return
+	return 
 func _ready() -> void:
 	model.sprite_2d.play("default")
 	progress = 0
@@ -72,6 +83,9 @@ func next_position(travle_time:float):
 
 func take_damage(dmg:int):
 	health = max(health - dmg,0)
+	health_bar.value = health/float(max_health)
+	if not health_bar.visible: 
+		health_bar.show()
 	audio_stream_player.play()
 	if health <= 0:
 		EventBus.ENEMY.defeted.emit([self.unit_type,self.tags])
@@ -82,7 +96,6 @@ func take_damage(dmg:int):
 func die():
 	state = EnemyState.Dead
 	set_physics_process(false)
-	#model.sprite_2d.position = Vector2.ZERO
 	model.scale = Vector2.ONE *.5
 	character_body.collision_layer = 0
 	model.sprite_2d.play("death")
