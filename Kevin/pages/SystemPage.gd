@@ -173,17 +173,17 @@ func _input(event: InputEvent) -> void:
 
 	var kind := _entry_kind(index)
 
-	if event.is_action_pressed("menu_back") or event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel"):
 		focus_out()
 		emit_signal("request_back")
 		return
 
-	if event.is_action_pressed("menu_down") or event.is_action_pressed("ui_down"):
+	if event.is_action_pressed("ui_down"):
 		_move(1); accept_event(); return
-	if event.is_action_pressed("menu_up") or event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("ui_up"):
 		_move(-1); accept_event(); return
 
-	if event.is_action_pressed("menu_left") or event.is_action_pressed("ui_left"):
+	if event.is_action_pressed("ui_left"):
 		match kind:
 			"button":
 				focus_out()
@@ -202,7 +202,7 @@ func _input(event: InputEvent) -> void:
 					accept_event()
 		return
 
-	if event.is_action_pressed("menu_right") or event.is_action_pressed("ui_right"):
+	if event.is_action_pressed("ui_right"):
 		match kind:
 			"button":
 				pass
@@ -220,7 +220,7 @@ func _input(event: InputEvent) -> void:
 					accept_event()
 		return
 
-	if event.is_action_pressed("menu_confirm") or event.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		match kind:
 			"button":
 				_activate_button(entries[index]); accept_event()

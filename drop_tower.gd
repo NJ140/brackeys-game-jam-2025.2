@@ -1,10 +1,7 @@
 extends TextureRect
 
-@export var tower_data := {
-	"tower_type": null,
-	"abilities": [],
-	"level": 0
-}
+@export var tower_data :Tower.Type = Tower.Type.Ranger
+
 var tower_sprite_frame := preload("res://Tower/tower_sprite_frame.tres")
 var current_drag: Node2D = AnimatedSprite2D.new()
 var dragged = false

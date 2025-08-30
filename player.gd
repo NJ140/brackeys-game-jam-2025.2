@@ -36,23 +36,24 @@ func build_tower(tower_type:Tower.Type,position):
 	if data.cost > biscuits[BiscuitEconomy.Flavor.Plain]:
 		EventBus.PLAYER.not_enogh_biscuits()
 		return
+	
 	biscuits[BiscuitEconomy.Flavor.Plain] -= data.cost
 	var new_tower = Tower.CREATE(data)
 	EventBus.TOWER.built.emit(new_tower,position)
 	
 	
 	
-	EventBus.PLAYER.update_buiscut_count.emit(biscuits)
+	EventBus.PLAYER.update_biscuit_count.emit(biscuits)
 	pass
 
 func repair_tower(tower,amount):
-	EventBus.PLAYER.update_buiscut_count.emit(biscuits)
+	EventBus.PLAYER.update_biscuit_count.emit(biscuits)
 	pass
 
 func power_up_tower(tower,flavor):
-	EventBus.PLAYER.update_buiscut_count.emit(buiscuts)
+	EventBus.PLAYER.update_biscuit_count.emit(biscuits)
 	pass
 
 func level_up_tower(tower):
-	EventBus.PLAYER.update_buiscut_count.emit(buiscuts)
+	EventBus.PLAYER.update_biscuit_count.emit(biscuits)
 	pass

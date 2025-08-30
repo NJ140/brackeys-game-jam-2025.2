@@ -223,11 +223,11 @@ func _unhandled_input(event: InputEvent) -> void:
 	if !_is_active():
 		return
 
-	if event.is_action_pressed("menu_left"):
+	if event.is_action_pressed("ui_left"):
 		_move_selection(-1); accept_event()
-	elif event.is_action_pressed("menu_right"):
+	elif event.is_action_pressed("ui_right"):
 		_move_selection(1); accept_event()
-	elif event.is_action_pressed("menu_confirm"):
+	elif event.is_action_pressed("ui_accept"):
 		_try_upgrade_selected(); accept_event()
 
 func _is_active() -> bool:

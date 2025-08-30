@@ -17,6 +17,11 @@ res://Tower/towers.gd
 res://event_bus.gd
 res://Kevin/pages/SkillNode.tscn
 res://Kevin/pages/SkillsPage.tscn
-res://Kevin/Hud.tscn
-res://Tower/tower_sprite_frame.tres
 res://Kevin/menu.tscn
+res://Julian/jman_playlist.tres
+res://Kevin/pages/SkillsPage.gd
+res://Kevin/pages/EquipPage.tscn
+res://Kevin/pages/ItemsPage.gd
+res://Kevin/pages/SystemPage.gd
+res://Kevin/Menu.gd
+res://drop_tower.gd

@@ -22,6 +22,7 @@ static var tower_scene:=preload("res://Tower/tower.tscn")
 @export var projectile_speed := 300 #pixels/sec
 @export var disabled = false
 
+var abilities := []
 var dict_enemies_in_range:Dictionary= {}
 var current_target = null
 

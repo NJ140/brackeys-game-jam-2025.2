@@ -656,6 +656,5 @@ layout_mode = 2
 text = "Start"
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("11_ugh17")]
-stream_paused = false
 
 [connection signal="pressed" from="HUD/Stats/MarginContainer/VBoxContainer/Button" to="HUD/Stats" method="_on_button_pressed"]

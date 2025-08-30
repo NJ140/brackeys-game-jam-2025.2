@@ -56,11 +56,11 @@ func _unhandled_input(e: InputEvent) -> void:
 	if get_viewport().is_input_handled():
 		return
 	if in_subpage:
-		if e.is_action_pressed("ui_cancel") or e.is_action_pressed("ui_cancel"):
+		if e.is_action_pressed("ui_cancel"):
 			_leave_current_page()
 		return
 
-	if e.is_action_pressed("ui_down") or e.is_action_pressed("ui_down"):
+	if e.is_action_pressed("ui_down"):
 		_move(1)
 	elif e.is_action_pressed("ui_cancel") or e.is_action_pressed("ui_up"):
 		_move(-1)
