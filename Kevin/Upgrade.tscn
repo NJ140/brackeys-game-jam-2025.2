@@ -1,0 +1,206 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnwy2ifjv5ktn"]
+
+[ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_a1wob"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqqjg"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[node name="Upgrade" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sizer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LeftSpacer" type="Control" parent="Sizer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[node name="PanelWrap" type="VBoxContainer" parent="Sizer"]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="TopSpacer" type="Control" parent="Sizer/PanelWrap"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Card" type="PanelContainer" parent="Sizer/PanelWrap"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xqqjg")
+
+[node name="CardVBox" type="VBoxContainer" parent="Sizer/PanelWrap/Card"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="TowerIcon" type="TextureRect" parent="Sizer/PanelWrap/Card/CardVBox/TitleRow"]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="TowerName" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/TitleRow"]
+layout_mode = 2
+text = "Tower Name"
+
+[node name="Preview" type="TextureRect" parent="Sizer/PanelWrap/Card/CardVBox"]
+layout_mode = 2
+texture = ExtResource("1_a1wob")
+stretch_mode = 5
+
+[node name="Grid" type="GridContainer" parent="Sizer/PanelWrap/Card/CardVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="PanelHP" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
+layout_mode = 2
+
+[node name="HpStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="HpLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat"]
+layout_mode = 2
+text = "HP:"
+horizontal_alignment = 1
+
+[node name="HpRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="hpOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+layout_mode = 2
+text = "30"
+
+[node name="Arrow" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+layout_mode = 2
+text = "→"
+
+[node name="HpNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+layout_mode = 2
+text = "32"
+
+[node name="PanelRange" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
+layout_mode = 2
+
+[node name="RangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="RangeLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat"]
+layout_mode = 2
+text = "Range:"
+vertical_alignment = 1
+
+[node name="RangeRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="RangeOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+layout_mode = 2
+text = "20"
+
+[node name="Arrow2" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+layout_mode = 2
+text = "→"
+
+[node name="RangeNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+layout_mode = 2
+text = "22"
+
+[node name="PanelDamage" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
+layout_mode = 2
+
+[node name="DamangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="DamageLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat"]
+layout_mode = 2
+text = "Damage:"
+vertical_alignment = 1
+
+[node name="DamageRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="DamageOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+layout_mode = 2
+text = "22"
+
+[node name="Arrow3" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+layout_mode = 2
+text = "→"
+
+[node name="DamageNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+layout_mode = 2
+text = "25"
+
+[node name="PanelCost" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox"]
+layout_mode = 2
+
+[node name="LevelRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/PanelCost"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="LevelLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/PanelCost/LevelRow"]
+layout_mode = 2
+text = "Level 0"
+
+[node name="ButtonsRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+layout_mode = 2
+text = "Upgrade: 🍪 10"
+
+[node name="Repair" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+layout_mode = 2
+text = "Repair: 🍪15
+"
+
+[node name="CancelButton" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+layout_mode = 2
+text = "Cancel"
+
+[node name="BottomSpacer" type="Control" parent="Sizer/PanelWrap"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="RightSpacer" type="Control" parent="Sizer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5

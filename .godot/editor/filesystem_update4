@@ -1,5 +1,4 @@
-res://Fade.tscn
-res://Tower/tower_sprite_frame.tres
 res://Kevin/Healthbar.tscn
-res://main.tscn
+res://Tower/tower_sprite_frame.tres
 res://Kevin/pages/Title.tscn
+res://Kevin/Upgrade.tscn
