@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnwy2ifjv5ktn"]
+[gd_scene load_steps=6 format=3 uid="uid://cd8pnna1u2ar8"]
 
 [ext_resource type="Texture2D" uid="uid://dk2osy66kx6b4" path="res://icon.svg" id="1_a1wob"]
+[ext_resource type="Script" uid="uid://4gkkpom7w7xp" path="res://Kevin/upgrade.gd" id="1_xqqjg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqqjg"]
+bg_color = Color(0.6, 0.6, 0.6, 0.447059)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -16,21 +18,48 @@ expand_margin_top = 16.0
 expand_margin_right = 16.0
 expand_margin_bottom = 16.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1lir"]
+bg_color = Color(0, 0, 0, 0.215686)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.533333)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdvju"]
+bg_color = Color(0.180392, 0.8, 0.443137, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_color = Color(0, 0, 0, 0.333333)
+shadow_size = 1
+
 [node name="Upgrade" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xqqjg")
 
 [node name="Sizer" type="HBoxContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="LeftSpacer" type="Control" parent="Sizer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
+mouse_filter = 2
 
 [node name="PanelWrap" type="VBoxContainer" parent="Sizer"]
 custom_minimum_size = Vector2(320, 0)
@@ -42,6 +71,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+mouse_filter = 2
 
 [node name="Card" type="PanelContainer" parent="Sizer/PanelWrap"]
 layout_mode = 2
@@ -58,15 +88,27 @@ layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="TowerIcon" type="TextureRect" parent="Sizer/PanelWrap/Card/CardVBox/TitleRow"]
-layout_mode = 2
-stretch_mode = 5
-
 [node name="TowerName" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/TitleRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Tower Name"
 
+[node name="Health" type="ProgressBar" parent="Sizer/PanelWrap/Card/CardVBox"]
+unique_name_in_owner = true
+z_index = 50
+custom_minimum_size = Vector2(22, 20)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_f1lir")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bdvju")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
 [node name="Preview" type="TextureRect" parent="Sizer/PanelWrap/Card/CardVBox"]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
 texture = ExtResource("1_a1wob")
 stretch_mode = 5
@@ -81,87 +123,116 @@ columns = 3
 [node name="PanelHP" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
 layout_mode = 2
 
-[node name="HpStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP"]
+[node name="MarginContainer" type="MarginContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HpStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="HpLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat"]
+[node name="HpLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer/HpStat"]
 layout_mode = 2
-text = "HP:"
+text = "HP"
 horizontal_alignment = 1
 
-[node name="HpRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat"]
+[node name="HpRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer/HpStat"]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="hpOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+[node name="hpOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer/HpStat/HpRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "30"
 
-[node name="Arrow" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+[node name="Arrow" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer/HpStat/HpRow"]
 layout_mode = 2
 text = "→"
 
-[node name="HpNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/HpStat/HpRow"]
+[node name="HpNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelHP/MarginContainer/HpStat/HpRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "32"
 
 [node name="PanelRange" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
 layout_mode = 2
 
-[node name="RangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange"]
+[node name="MarginContainer" type="MarginContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="RangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="RangeLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat"]
+[node name="RangeLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer/RangeStat"]
 layout_mode = 2
-text = "Range:"
+text = "Range"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RangeRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat"]
+[node name="RangeRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer/RangeStat"]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="RangeOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+[node name="RangeOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer/RangeStat/RangeRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "20"
 
-[node name="Arrow2" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+[node name="Arrow2" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer/RangeStat/RangeRow"]
 layout_mode = 2
 text = "→"
 
-[node name="RangeNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/RangeStat/RangeRow"]
+[node name="RangeNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelRange/MarginContainer/RangeStat/RangeRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "22"
 
 [node name="PanelDamage" type="PanelContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid"]
 layout_mode = 2
 
-[node name="DamangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage"]
+[node name="MarginContainer" type="MarginContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="DamangeStat" type="VBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 4
 
-[node name="DamageLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat"]
+[node name="DamageLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer/DamangeStat"]
 layout_mode = 2
-text = "Damage:"
+text = "Damage"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DamageRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat"]
+[node name="DamageRow" type="HBoxContainer" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer/DamangeStat"]
 layout_mode = 2
 theme_override_constants/separation = 4
 alignment = 1
 
-[node name="DamageOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+[node name="DamageOld" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer/DamangeStat/DamageRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "22"
 
-[node name="Arrow3" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+[node name="Arrow3" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer/DamangeStat/DamageRow"]
 layout_mode = 2
 text = "→"
 
-[node name="DamageNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/DamangeStat/DamageRow"]
+[node name="DamageNew" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/Grid/PanelDamage/MarginContainer/DamangeStat/DamageRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "25"
 
@@ -174,6 +245,7 @@ theme_override_constants/separation = 6
 alignment = 1
 
 [node name="LevelLabel" type="Label" parent="Sizer/PanelWrap/Card/CardVBox/PanelCost/LevelRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Level 0"
 
@@ -183,15 +255,18 @@ theme_override_constants/separation = 8
 alignment = 1
 
 [node name="UpgradeButton" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Upgrade: 🍪 10"
 
-[node name="Repair" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+[node name="RepairButton" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Repair: 🍪15
 "
 
 [node name="CancelButton" type="Button" parent="Sizer/PanelWrap/Card/CardVBox/ButtonsRow"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Cancel"
 
@@ -199,8 +274,12 @@ text = "Cancel"
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+mouse_filter = 2
 
 [node name="RightSpacer" type="Control" parent="Sizer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.5
+mouse_filter = 2
+
+[connection signal="pressed" from="Sizer/PanelWrap/Card/CardVBox/ButtonsRow/CancelButton" to="." method="_on_cancel_button_pressed"]

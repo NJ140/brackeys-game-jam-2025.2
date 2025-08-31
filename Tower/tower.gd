@@ -1,11 +1,36 @@
 class_name Tower extends CharacterBody2D
 
+signal died
+
 enum Type{
 	Ranger,
 	Warrior,
 	Mage,
 }
 
+static var upgrade_sequence ={
+	#(type, cost, health, range, damage, attack_time, projectile_speed, abilities)
+	Type.Ranger : [
+		TowerData.new(Type.Ranger,3,15,200,1,1,300,[]), # level 1 
+		TowerData.new(Type.Ranger,6,20,300,1,.9,350,[]), # level 2
+		TowerData.new(Type.Ranger,12,30,500,2,.7,400,[]), # level 3 
+	],
+	Type.Warrior : [
+		TowerData.new(Type.Warrior,5,30,100,2,0.5,150,[]), 
+		TowerData.new(Type.Warrior,10,50,100,2,0.4,150,[]),
+		TowerData.new(Type.Warrior,20,100,100,3,0.4,150,[]),
+	],
+	Type.Mage : [
+		TowerData.new(Type.Mage,5,8,300,1,3,200,[]),
+		TowerData.new(Type.Mage,10,12,600,1,2.5,200,[]),
+		TowerData.new(Type.Mage,20,20,700,2,2.5,200,[]),
+	],
+}
+static var type_to_name = {
+	Type.Ranger : "ranger",
+	Type.Warrior : "warrior",
+	Type.Mage : "mage",
+}
 const EnemyLayerMask := 2
 const BASE_HEALTH := 20
 
@@ -16,10 +41,13 @@ const BASE_HEALTH := 20
 @onready var projectile_point: Node2D = %Projectile_spawn
 @onready var range_visual: Panel = %RangeVisual
 @onready var shoot_sfx: AudioStreamPlayer = %ShootSFX
+@onready var damage_sfx: AudioStreamPlayer = %ShootSFX
+@onready var health_bar: ProgressBar = $Healthbar/ProgressBar
 
-static var tower_scene:=preload("res://Tower/tower.tscn")
+static var tower_scene:= preload("res://Tower/tower.tscn")
 @export var base_projectile = preload("res://projectile.tscn")
 
+@export var level := 1
 @export var type := Type.Ranger
 @export var projectile_speed := 300 #pixels/sec
 @export var disabled = false
@@ -29,6 +57,7 @@ var dict_enemies_in_range:Dictionary= {}
 var current_target = null
 
 ## Stats
+var max_health := BASE_HEALTH
 var health := BASE_HEALTH
 @onready var range := 200:
 	get:
@@ -110,8 +139,26 @@ func get_enemies_in_range()-> Array:
 	)
 
 func take_damage(dmg:int):
-	model.do_damaged_animation()
+	health = max(health - dmg,0)
+	health_bar.value = health/float(max_health)
+	if not health_bar.visible: 
+		health_bar.show()
+	damage_sfx.play()
+	if health <= 0:
+		EventBus.TOWER.defeted.emit(self)
+		die()
+	else:
+		model.do_damaged_animation()
 
+func repair(strength:int):
+	health = min(health + strength,max_health)
+	if health_bar.visible and health >= max_health:
+		health_bar.hide()
+
+func die():
+	died.emit()
+	queue_free()
+	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click") or event.is_action_pressed("right_click"):
 		hide_range()
@@ -135,29 +182,27 @@ func _on_pickable_input_event(viewport: Node, event: InputEvent, shape_idx: int)
 		show_range()
 func set_data(data:TowerData):
 	type = data.type
-	
-func add_power():
-	pass
-
-func get_value():
-	pass
-
-func get_sell_value():
-	pass
-
-func sell_tower():
-	pass
 
 static func CREATE(data:TowerData):
 	var tower:Tower= tower_scene.instantiate()
-	tower.type = data.type
-	tower.health = data.health
-	tower.range = data.range
-	tower.damage = data.damage
-	tower.attack_time = data.attack_time
-	tower.projectile_speed = data.projectile_speed
-	tower.abilities = data.abilities
+	tower.set_with_data(data)
 	return tower
+
+func set_with_data(data:TowerData):
+	type = data.type
+	health = data.health
+	range = data.range
+	damage = data.damage
+	attack_time = data.attack_time
+	projectile_speed = data.projectile_speed
+	abilities = data.abilities
+	max_health = data.health
+
+func _on_pickable_mouse_entered() -> void:
+	range_visual.show()
+
+func _on_pickable_mouse_exited() -> void:
+	range_visual.hide()
 
 class TowerData extends Resource:
 	@export var type:Tower.Type

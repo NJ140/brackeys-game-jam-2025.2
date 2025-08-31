@@ -23,7 +23,8 @@ func _physics_process(_delta: float) -> void:
 	if round_ongoing:
 		do_round()
 	else:
-		set_physics_process(false)
+		pass
+		#set_physics_process(false)
 
 func do_round():
 	var waves_completed:int = 0
@@ -42,6 +43,7 @@ func do_round():
 	EventBus.WAVE.no_more_enemies_to_spawn.emit()
 
 func round_ended():
+	print("ended")
 	round_ongoing = false
 	if not current_round_num >= rounds.size():
 		EventBus.WAVE.round_ended.emit(current_round_num)
@@ -49,7 +51,10 @@ func round_ended():
 		EventBus.PLAYER.win_game.emit(current_round_num)
 
 func new_round():
+	print("New Round ", current_round_num)
+	print(round_ongoing,current_round_num > rounds.size())
 	if round_ongoing or current_round_num > rounds.size(): return
+	
 	current_round_num += 1
 	round_ongoing = true
 	if current_round_num >= rounds.size():

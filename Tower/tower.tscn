@@ -135,9 +135,14 @@ radius = 31.0483
 script = ExtResource("1_6pm6r")
 
 [node name="Healthbar" parent="." instance=ExtResource("6_rt5j0")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 5)
 offset_top = -68.0
 offset_bottom = -68.0
+
+[node name="ProgressBar" parent="Healthbar" index="0"]
+visible = false
+value = 1.0
 
 [node name="Pickable" type="Area2D" parent="."]
 z_index = 1
@@ -194,7 +199,7 @@ texture_filter = 1
 position = Vector2(0, -30)
 scale = Vector2(2.5, 2.5)
 sprite_frames = ExtResource("3_okia5")
-animation = &"mage"
+animation = &"warrior"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
 root_node = NodePath("../..")
@@ -238,7 +243,18 @@ stream = ExtResource("5_jnpw3")
 volume_db = -11.032
 pitch_scale = 2.83
 
+[node name="DamageSFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_jnpw3")
+volume_db = -2.315
+pitch_scale = 0.64
+bus = &"SFX"
+
 [connection signal="input_event" from="Pickable" to="." method="_on_pickable_input_event"]
+[connection signal="mouse_entered" from="Pickable" to="." method="_on_pickable_mouse_entered"]
+[connection signal="mouse_exited" from="Pickable" to="." method="_on_pickable_mouse_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_range_body_entered"]
 [connection signal="body_shape_exited" from="AttackRange" to="." method="_on_range_body_shape_exited"]
 [connection signal="timeout" from="AttackTimer" to="." method="_try_attack"]
+
+[editable path="Healthbar"]

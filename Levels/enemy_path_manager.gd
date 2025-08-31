@@ -25,6 +25,7 @@ func get_enemy_count():
 	return paths.map(func(p:EnemyPath): return p.get_enemy_count())
 
 func start_tracking_enemies():
+	current_round_paths_cleared = 0
 	for path:EnemyPath in paths:
 		if not path.is_tracking_enemy_count:
 			path.start_tracking_enemies()

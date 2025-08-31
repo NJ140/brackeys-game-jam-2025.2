@@ -19,4 +19,5 @@ func start_tracking_enemies():
 func _process(_delta: float) -> void:
 	if get_enemy_count().size() <= 0 and is_tracking_enemy_count:
 		no_more_enemies_on_path.emit()
+		is_tracking_enemy_count = false
 		set_process(false)
