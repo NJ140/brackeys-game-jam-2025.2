@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 res://Fade.tscn
 res://Tower/tower_sprite_frame.tres
 res://Kevin/pages/Title.tscn
@@ -28,3 +29,9 @@ res://Kevin/pages/Ending.tscn
 res://Kevin/upgrade.gd
 res://Levels/enemy_path_manager.gd
 res://Levels/enemy_path_2d.gd
+=======
+res://Kevin/Hud.tscn
+res://Tower/tower_sprite_frame.tres
+res://Kevin/Challenge.tscn
+res://Kevin/wave_effect.gd
+>>>>>>> origin/Nate-Fix-this

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ProgressBar
 Label
 MarginContainer
@@ -8,8 +9,22 @@ Camera2D
 RichTextLabel
 PanelContainer
 Button
+=======
+HSlider
+PanelContainer
+RichTextLabel
+Label
+TextureButton
+Button
+TextureRect
+>>>>>>> origin/Nate-Fix-this
 HBoxContainer
 VBoxContainer
 GridContainer
 Control
 ColorRect
+<<<<<<< HEAD
+=======
+TextureProgressBar
+ProgressBar
+>>>>>>> origin/Nate-Fix-this
