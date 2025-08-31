@@ -1,5 +1,4 @@
-res://Kevin/Healthbar.tscn
+res://Kevin/Hud.tscn
 res://Tower/tower_sprite_frame.tres
-res://Kevin/pages/Title.tscn
-res://Kevin/Upgrade.tscn
-res://Kevin/pages/Ending.tscn
+res://Kevin/Challenge.tscn
+res://Kevin/wave_effect.gd

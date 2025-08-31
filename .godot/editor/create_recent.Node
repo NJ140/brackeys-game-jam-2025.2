@@ -1,6 +1,9 @@
+HSlider
 PanelContainer
-Button
+RichTextLabel
 Label
+TextureButton
+Button
 TextureRect
 HBoxContainer
 VBoxContainer
@@ -10,5 +13,3 @@ MarginContainer
 ColorRect
 TextureProgressBar
 ProgressBar
-Node2D
-Marker2D

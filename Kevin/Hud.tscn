@@ -182,6 +182,15 @@ texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="PowerCont1" type="PanelContainer" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power1"]
+layout_mode = 0
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="Power1Num" type="Label" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power1/PowerCont1"]
+layout_mode = 2
+text = "x3"
+
 [node name="Power2" type="TextureButton" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
@@ -189,12 +198,28 @@ texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="PowerCont2" type="PanelContainer" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power2"]
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="Power2Num" type="Label" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power2/PowerCont2"]
+layout_mode = 2
+text = "x3"
+
 [node name="Power3" type="TextureButton" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture_normal = ExtResource("1_d4yu0")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="PowerCont3" type="PanelContainer" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power3"]
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="PowerNum3" type="Label" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar/PowerBar/Power3/PowerCont3"]
+layout_mode = 2
+text = "x3"
 
 [node name="TowerTile" type="Label" parent="Margin/Main/Side Bar/PlayRow/PanelContainer/MarginContainer/RightSidebar"]
 layout_mode = 2
