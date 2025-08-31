@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 res://Fade.tscn
 res://Tower/tower_sprite_frame.tres
 res://Kevin/pages/Title.tscn
@@ -23,3 +24,10 @@ res://player.gd
 res://Rounds/wave_spawner.gd
 res://Enemy/enemy.gd
 res://Kevin/Healthbar.tscn
+=======
+res://Kevin/Healthbar.tscn
+res://Tower/tower_sprite_frame.tres
+res://Kevin/pages/Title.tscn
+res://Kevin/Upgrade.tscn
+res://Kevin/pages/Ending.tscn
+>>>>>>> 1e623586b0b5bfb4eec3ef6d8f0a88eac2ab3594
